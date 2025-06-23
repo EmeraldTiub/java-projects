@@ -6,7 +6,7 @@
     - currNum++;
 
 What if we want to give a starting value as well?
-Set currNum to the starting value you want.
+Set currSum to the starting value you want.
 
 What if we want to increment by a specific value instead of one?
 Adjust the line, currNum++, to currNum += [desired value]
