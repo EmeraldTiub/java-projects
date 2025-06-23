@@ -1,5 +1,4 @@
 package Qi_Payroll;
-
 public class QPayroll {
 
     /*
