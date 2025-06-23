@@ -25,9 +25,9 @@ public class QSumNumbers {
              *
              * What if we want to increment by a specific value instead of one?
              * Add n (your desired value to increment by) minus i.
-             * Example: if you want to add 2 each time, replace the 0 to a 1
+             * Example: if you want to add 2 each time, add 1 to i, like currSum += i + 1;
              */
-            currSum += i+0;
+            currSum += i;
         }
 
         return currSum;
