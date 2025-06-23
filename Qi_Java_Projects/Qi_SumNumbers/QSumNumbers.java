@@ -8,7 +8,7 @@ public class QSumNumbers {
      * @param No arguments
      * @return the sum of numbers from 1 to 10
      */
-    public static int sum() {
+    public static int sum(int n) {
         /*
          * Define the variable: currSum (current sum)
          *
@@ -19,13 +19,13 @@ public class QSumNumbers {
         int currSum = 0; //
 
         // Repeat 10 times
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= n; i++) {
             /*
              * Add the current number to the sum
              *
              * What if we want to increment by a specific value instead of one?
-             * Add n (your desired value to increment by) minus i.
-             * Example: if you want to add 2 each time, add 1 to i, like currSum += i + 1;
+             * Add desired value to i (in the for loop statement)
+             * Example: If the desired value is 2, for (int i = 1; i <= n; i+=2)
              */
             currSum += i;
         }
@@ -39,6 +39,6 @@ public class QSumNumbers {
      * @param Comand-line arguments. Not used here.
      */
     public static void main(String[] args) {
-        System.out.println(sum());
+        System.out.println(sum(10));
     }
 }
