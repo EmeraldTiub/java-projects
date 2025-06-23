@@ -11,7 +11,7 @@ public class QDisplayCustomerData {
     public static void main(String[] args) {
         // Set the variables (name, age in days, and balance)
         String name = "joe";
-        int daysOld = 19436;
+        int age = 19436 / 365;
         float balance = 163.89f;
 
         // Print the results
@@ -20,6 +20,6 @@ public class QDisplayCustomerData {
          * (that's the max # of decimal places a float can have)
          * when its %s, it automatically calls the Float.toString()
          */
-        System.out.printf("The customer's name is %s. The customer is %d days old or about %d years old. The customer's balance is $%s.%n", name, daysOld, daysOld / 365, balance);
+        System.out.printf("The customer's name is %s. The customer is %d years old. The customer's balance is $%s.%n", name, age, balance);
     }
 }
