@@ -8,7 +8,13 @@ public class DisplayCustomerData {
      */
     public static void main(String[] args) {
         String name = "Fred Jones"; // set name to the name of the customer provided (Fred Jones)
-        int daysOld = 19436; // set daysOld to the customer's age in # of days
+        
+        /*
+         * set daysOld to the customer's age in # of days
+         * another way, using years for the age instead of days, is: int age = (int) (19436 / 365);
+         */
+        int daysOld = 19436;
+        
         float balance = 567.89f; // set balance to the customer's balance
 
         // print the results
