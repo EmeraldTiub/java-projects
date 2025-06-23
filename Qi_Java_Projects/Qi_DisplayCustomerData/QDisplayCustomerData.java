@@ -11,6 +11,8 @@ public class QDisplayCustomerData {
     public static void main(String[] args) {
         // Set the variables (name, age in days, and balance)
         String name = "joe";
+
+        // Prof. Barry did it this way, dividing by 365 right when the variable is made.
         int age = 19436 / 365;
         float balance = 163.89f;
 
