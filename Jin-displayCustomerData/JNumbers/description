@@ -1,0 +1,9 @@
+Demo: Sum Numbers
+
+- Write a function that, given a number like 10, sums the numbers
+  from 1 to that number, incrementing by one and returning the sum
+
+- Next steps...
+    - What if we want to give a starting value as well?
+    - What if we want to increment by a specified value instead of one?
+    - What if we want a floating-point version as well?
