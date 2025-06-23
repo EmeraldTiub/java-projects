@@ -3,7 +3,8 @@ public class DisplayCustomerData {
         // Make the example customer data.
         String name = "Fred Jones";
         int daysOld = 19436;
-        double balance = 567.89;
+        // The balance was 567.89 in the presentation but Barry put 567.80?
+        double balance = 567.80;
         // Convert the age in days to years.
         int yearsOld = (int) daysOld / 365;
         // Print out the results.
