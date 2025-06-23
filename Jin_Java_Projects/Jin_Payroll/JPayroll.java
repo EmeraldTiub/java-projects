@@ -1,3 +1,5 @@
+package Jin_Payroll;
+
 public class JPayroll {
     /**
      * Print out the checks.

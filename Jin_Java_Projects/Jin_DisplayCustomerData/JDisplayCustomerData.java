@@ -1,3 +1,5 @@
+package Jin_DisplayCustomerData;
+
 public class JDisplayCustomerData {
     public static void main(String[] args) {
         // Set the customer data.
