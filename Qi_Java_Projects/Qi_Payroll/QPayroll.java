@@ -1,13 +1,12 @@
 package Qi_Payroll;
-public class QPayroll {
 
+public class QPayroll {
     /*
-     * Calls each separate function
+     * Calls each separate function that's on the row below it in the hierarchy
      *
-     * @return The results from each function called
+     * @return Command-line arguments. Not used here.
      */
     public static void main(String[] args) {
-        // Call each function on the layer below it in the hierarchy
         inputWeeklyHours();
         readHourlyWages();
         calculateGrossPay();
@@ -16,47 +15,47 @@ public class QPayroll {
     }
 
     /*
-     * States that the function was called from the main function
+     * Verifies that it was called from main()
      *
-     * @return A string saying that inputWeeklyHours() was called from the main function
+     * @return inputWeeklyHours() was called from the main function
      */
-    public static void inputWeeklyHours(){
+    public static void inputWeeklyHours() {
         System.out.println("inputWeeklyHours() was called from the main function");
     }
 
     /*
-     * States that the function was called from the main function
+     * Verifies that it was called from main()
      *
-     * @return A string saying that readHourlyWages() was called from the main function
+     * @return readHourlyWages() was called from the main function
      */
-    public static void readHourlyWages(){
+    public static void readHourlyWages() {
         System.out.println("readHourlyWages() was called from the main function");
     }
 
     /*
-     * States that the function was called from the main function
+     * Verifies that it was called from main()
      *
-     * @return A string saying that calculateGrossPay() was called from the main function
+     * @return calculateGrossPay() was called from the main function
      */
-    public static void calculateGrossPay(){
+    public static void calculateGrossPay() {
         System.out.println("calculateGrossPay() was called from the main function");
     }
 
     /*
-     * States that the function was called from the main function
+     * Verifies that it was called from main()
      *
-     * @return A string saying that calculateTaxesAndNetPay() was called from the main function
+     * @return calculateTaxesAndNetPay() was called from the main function
      */
-    public static void calculateTaxesAndNetPay(){
+    public static void calculateTaxesAndNetPay() {
         System.out.println("calculateTaxesAndNetPay() was called from the main function");
     }
 
     /*
-     * States that the function was called from the main function
+     * Verifies that it was called from main()
      *
-     * @return A string saying that printChecks() was called from the main function
+     * @return printChecks() was called from the main function
      */
-    public static void printChecks(){
+    public static void printChecks() {
         System.out.println("printChecks() was called from the main function");
     }
 }
