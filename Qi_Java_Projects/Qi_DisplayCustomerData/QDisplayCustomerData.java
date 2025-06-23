@@ -14,7 +14,7 @@ public class QDisplayCustomerData {
 
         // Prof. Barry did it this way, dividing by 365 right when the variable is made.
         int age = 19436 / 365;
-        float balance = 163.89f;
+        double balance = 163.89f; // changed float to double because double is just more convenient
 
         // Print the results
         /* Edit: changed %f to %s when showing balance.
