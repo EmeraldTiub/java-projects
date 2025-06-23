@@ -1,0 +1,7 @@
+Demo: Display Customer Data
+
+- Store customer data
+  - Name (e.g., Fred Jones)
+  - Age (calculate from "days old" format yielding 19436)
+  - Balance (e.g., 567.89)
+- Display it on the console with descriptions
