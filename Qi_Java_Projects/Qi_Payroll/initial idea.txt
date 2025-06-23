@@ -1,0 +1,8 @@
+1. Make payroll function the main function
+    - call the following functions:
+        > inputWeeklyHours()
+        > readHourlyWages()
+        > calculateGrossPay()
+        > calculateTaxesAndNetPay()
+        > printChecks()
+2. no arguments needed for those functions
