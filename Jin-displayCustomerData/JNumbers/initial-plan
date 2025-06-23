@@ -1,0 +1,24 @@
+1. For the original summing function:
+    - Set the final sum to 0.
+    - Loop through the numbers from 1 to the specified number.
+    - For each of those numbers, add it to the final sum.
+    - After the loop, return the final sum.
+
+2. For the summing function with a specified start value:
+    - Set the final sum to 0.
+    - Loop through the numbers from the start value to the specified number.
+    - Add each number to the final sum.
+    - After the loop, return the final sum.
+
+3. For the summing function with a specified increment:
+    - Set the final sum to 0.
+    - Loop through the numbers from 1 to the specified number
+      but instead of adding 1 to the addition, we add the specified increment.
+    - Add the addition to the final sum.
+    - After the loop, return the final sum.
+
+4. For the floating-point version of the summing function:
+    - Set the final sum to a double with a value of 0.0.
+    - Loop through the numbers from 1 to the number but increment by a specified floating-point increment.
+    - Add to the final sum.
+    - After the loop, return the final sum.
