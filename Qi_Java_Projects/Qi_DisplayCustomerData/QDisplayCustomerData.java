@@ -15,6 +15,11 @@ public class QDisplayCustomerData {
         float balance = 163.89f;
 
         // Print the results
-        System.out.printf("The customer's name is %s. The customer is %d days old or about %d years old. The customer's balance is $%f.", name, daysOld, daysOld / 365, balance);
+        /* Edit: changed %f to %s when showing balance.
+         * originally, it showed 163.889999 because floats like to be 6 decimal places
+         * (that's the max # of decimal places a float can have)
+         * when its %s, it automatically calls the Float.toString()
+         */
+        System.out.printf("The customer's name is %s. The customer is %d days old or about %d years old. The customer's balance is $%s.%n", name, daysOld, daysOld / 365, balance);
     }
 }
