@@ -1,7 +1,10 @@
-1. Make the variables
-  - name = Fred Jones
-  - daysOld = 19436
-  - age = 19436 days to years
-  - balance = $567.89
+1. Input the user in the console for the variables:
+  - What is the customer's name? (Example: Fred Jones)
+  - How many days old is the customer? (Example: 19436)
+  - What is the customer's balance? (Example: $567.89)
+
 2. Print out the variables in this format:
-  Detail: Detail value
+  Name: Fred Jones
+  Days old: 19436
+  Age: 53.25 (Calculated by dividing Days old by 365)
+  Balance: $567.89
