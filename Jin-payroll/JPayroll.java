@@ -1,6 +1,5 @@
-import java.io.File;
 
-public class Payroll {
+public class JPayroll {
     /**
      * Read the hourly wages of each employee.
      * @return "Done reading wages."
@@ -34,6 +33,13 @@ public class Payroll {
     }
 
     /**
+     * Print the total checks.
+     * @return
+     */
+    public static String printChecks() {
+        return "Done printing checks.";
+    }
+    /**
      * Call the other functions.
      * @param args
      */
@@ -43,7 +49,8 @@ public class Payroll {
         calculateGross();
         calculateTaxes();
         getWeeklyHours();
+        printChecks();
         // Print the result.
-        System.out.println("Called readWages, calculateGross, and calculateTaxes.");
+        System.out.println("Called readWages, calculateGross, printChecks, and calculateTaxes.");
     }
 }
