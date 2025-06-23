@@ -17,7 +17,7 @@ public class QSumNumbers {
      * Sums up numbers from 1 to given number inclusive. If number was 10, it'll calculate 1+2+3+4+5+6+7+8+9+10
      *
      * @param No arguments
-     * @return the sum of numbers from 1 to 10
+     * @return the sum of numbers from 1 to n
      */
     public static int sum(int n) {
         // Define the variable: currSum (current sum)
@@ -31,7 +31,12 @@ public class QSumNumbers {
         return currSum;
     }
 
-
+    /*
+     * Sums up numbers from a given start to a given end inclusive
+     *
+     * @param No arguments
+     * @return the sum of numbers from start to end
+     */
     public static int sum(int start, int end) {
         // Define the variable: currSum
         int currSum = 0;
@@ -43,6 +48,12 @@ public class QSumNumbers {
         return currSum;
     }
 
+    /*
+     * Sums up numbers from a given start to a given end inclusive and skipping by a given increment amount.
+     *
+     * @param No arguments
+     * @return the sum of numbers from start to end skipping by incrBy
+     */
     public static int sum(int start, int end, int incrBy) {
         // Define the variable: currSum
         int currSum = 0;
@@ -54,6 +65,12 @@ public class QSumNumbers {
         return currSum;
     }
 
+    /*
+     * Sums up numbers from a given start to a given end inclusive and skipping by a given increment amount. All of those amounts are doubles.
+     *
+     * @param No arguments
+     * @return the sum of numbers from start to end skipping by incrBy
+     */
     public static double sum(double start, double end, double incrBy) {
         // Define the variable currSum as a double.
         double currSum = 0.0;
