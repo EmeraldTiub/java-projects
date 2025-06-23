@@ -1,3 +1,6 @@
-1. Make an "Employee" class that has variables "firstName", "lastName", "hourlyWage"
-2. Read through HourlyWages.csv and make an array of Employee objects.
-3. Make a function to calculate the gross pay
+1. Read through the wages.
+2. Get the weekly hours.
+3. Calculate the gross pay.
+4. Calculate the taxes and net pay.
+5. Print the checks.
+6. Print out the results in the main function.
