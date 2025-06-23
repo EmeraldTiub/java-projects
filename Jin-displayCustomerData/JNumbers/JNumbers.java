@@ -17,11 +17,13 @@ public class JNumbers {
 
     /**
      * Sum up the numbers from start to number.
+     * Turns out that you can have the same name but when you have a
+     * different number of parameters, it's a different function.
      * @param number
      * @param start
      * @return the final sum.
      */
-    public static int sumNumbersWithSpecificStart(int number, int start) {
+    public static int sumNumbers(int number, int start) {
         int sum = 0;
         // Sum up the numbers from 1 to number starting at start.
         for (int i = start; i <= number; i++) {
@@ -32,14 +34,15 @@ public class JNumbers {
 
     /**
      * Sum up the numbers from 1 to number but increment by incr.
+     * Uses a different number of parameters, so again, it is a different function.
      * @param number
      * @param incr
      * @return the final sum.
      */
-    public static int sumNumbersWithSpecificIncrement(int number, int incr) {
+    public static int sumNumbers(int start, int number, int incr) {
         int sum = 0;
-        // Sum up the numbers from 1 to the number incrementing by incr instead of 1.
-        for (int i = 1; i <= number; i += incr) {
+        // Sum up the numbers from start to the number incrementing by incr instead of 1.
+        for (int i = start; i <= number; i += incr) {
             sum += i;
         }
         return sum;
@@ -69,7 +72,7 @@ public class JNumbers {
         // Get the sum of the numbers from 1 to 10 (including 10).
         System.out.println("Sum of numbers from 1 to 10: " + sumNumbers(10));
         // Get the sum of the numbers from 4 to 10 (including 10).
-        System.out.println("Sum of numbers from 4 to 10: " + sumNumbersWithSpecificStart(10, 4));
+        System.out.println("Sum of numbers from 4 to 10: " + sumNumbers(10, 4));
         // Get the sum of the numbers from 1 to 10 (including 10) but incrementing by 2 instead of 1.
         System.out.println("Sum of numbers from 1 to 10 with increment of 2: " + sumNumbersWithSpecificIncrement(10, 2));
         // Get the sum of decimals from 0.5 to 2.5 but incrementing by 0.2.
