@@ -9,17 +9,25 @@ public class QSumNumbers {
      * @return the sum of numbers from 1 to 10
      */
     public static int sum() {
-        // define the variables: currSum (current sum) and currNum (current number to be added to sum)
-        int currSum = 0; // Set this variable to another number to change starting value
-        int currNum = 1;
+        /*
+         * Define the variable: currSum (current sum)
+         *
+         * What if we want to give a starting value as well?
+         * Set this variable to another number to change starting value
+         * Example: if you want to start at 5, set currSum to 5
+         */
+        int currSum = 0; //
 
-        // repeat 10 times
+        // Repeat 10 times
         for (int i = 1; i <= 10; i++) {
-            // add the current number to the sum
-            currSum += currNum;
-
-            // shift the current number up
-            currNum++; // Change how much is added to currNum if you want it to increment by another value
+            /*
+             * Add the current number to the sum
+             *
+             * What if we want to increment by a specific value instead of one?
+             * Add n (your desired value to increment by) minus i.
+             * Example: if you want to add 2 each time, replace the 0 to a 1
+             */
+            currSum += i+0;
         }
 
         return currSum;
