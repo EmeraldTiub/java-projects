@@ -1,7 +1,7 @@
 1. Make the variables
   - name = Fred Jones
   - daysOld = 19436
-  - age = 19436 days to years
+  - age = 53.25
   - balance = $567.89
 2. Print out the variables in this format:
   Detail: Detail value
