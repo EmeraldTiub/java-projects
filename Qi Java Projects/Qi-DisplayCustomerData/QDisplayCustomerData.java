@@ -1,4 +1,4 @@
-public class DisplayCustomerData {
+public class QDisplayCustomerData {
 
     /*
      * State the name, age (in days and years, rounded to a whole number), and balance of a customer
