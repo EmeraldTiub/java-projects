@@ -54,7 +54,7 @@ public class QSumNumbers {
         return currSum;
     }
 
-    public static int sum(double start, double end, double incrBy) {
+    public static double sum(double start, double end, double incrBy) {
         // Define the variable currSum as a double.
         double currSum = 0.0;
 
@@ -62,6 +62,6 @@ public class QSumNumbers {
         for (double i = start; i <= end; i+= incrBy) {
             currSum += i;
         }
-        return (int) currSum;
+        return currSum;
     }
 }
