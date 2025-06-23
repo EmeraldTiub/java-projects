@@ -121,5 +121,6 @@ public class Main {
 
         // Just use printf here instead of DecimalFormat
         System.out.printf("Average GPA: %.1f%n", calculateAverageGpa(students));
+        System.out.println("hello");
     }
 }
