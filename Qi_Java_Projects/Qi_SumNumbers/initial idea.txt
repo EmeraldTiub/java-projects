@@ -1,0 +1,14 @@
+1. make a variable (currSum) that keeps track of the current sum  (starts at 0)
+2. make a variable (currNum) that keeps track of which number is supposed to be added to the current sum (starts as 1)
+3. make a for loop
+    - for loop continues n times (n is the number given. n = 10 in the example)
+    - add the current currNum to currSum
+    - currNum++;
+
+What if we want to give a starting value as well?
+Set currNum to the starting value you want.
+
+What if we want to increment by a specific value instead of one?
+Adjust the line, currNum++, to currNum += [desired value]
+
+What if we want a floating-point version as well?
