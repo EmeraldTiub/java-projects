@@ -1,6 +1,0 @@
-1. Set the variables to the examples in the lecture
-  - name = Fred Jones
-  - daysOld = 19436
-  - balance = $567.89
-2. Print out the variables like so:
-   The customer's name is Fred Jones. The customer is 19436 days old (53 years old). The customer's balance is $567.89.
