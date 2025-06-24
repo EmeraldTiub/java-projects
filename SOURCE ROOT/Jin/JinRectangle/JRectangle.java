@@ -84,7 +84,9 @@ public class JRectangle extends JPanel {
         frame.add(new JRectangle(name, width, height));
 
         // Make the frame visible and set the size.
-        frame.setSize(400, 600);
+
+        // The width and height should both be 200, because the square at maximum is a 100x100.
+        frame.setSize(200, 200);
         frame.setVisible(true);
     }
 }
