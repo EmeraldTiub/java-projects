@@ -62,6 +62,9 @@ public class QDrawARectangle extends JPanel {
         super.paintComponent(g);
         Graphics g2d = (Graphics) g;
 
+        // Set the background color to white
+        setBackground(Color.WHITE);
+
         // Create the rectangle
         g2d.setColor(Color.BLUE);
         g2d.fillRect(60, 50, width, height);
