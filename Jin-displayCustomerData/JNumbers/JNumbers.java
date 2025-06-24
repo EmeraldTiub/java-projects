@@ -50,12 +50,13 @@ public class JNumbers {
 
     /**
      * Sum up the decimals from start to end but increment by incr.
+     * Uses different types of parameters (doubles, not ints) so still a different function.
      * @param start
      * @param end
      * @param incr
      * @return the final sum (type is double.)
      */
-    public static double sumFloatingPointNumbers(double start, double end, double incr) {
+    public static double sumNumbers(double start, double end, double incr) {
         double sum = 0.0;
         // Sum up the floating-point numbers from start to end incrementing by incr instead of 1.
         for (double i = start; i <= end; i += incr) {
@@ -74,8 +75,8 @@ public class JNumbers {
         // Get the sum of the numbers from 4 to 10 (including 10).
         System.out.println("Sum of numbers from 4 to 10: " + sumNumbers(10, 4));
         // Get the sum of the numbers from 1 to 10 (including 10) but incrementing by 2 instead of 1.
-        System.out.println("Sum of numbers from 1 to 10 with increment of 2: " + sumNumbersWithSpecificIncrement(10, 2));
+        System.out.println("Sum of numbers from 1 to 10 with increment of 2: " + sumNumbers(10, 2));
         // Get the sum of decimals from 0.5 to 2.5 but incrementing by 0.2.
-        System.out.println("Sum of numbers from 0.5 to 2.5 with increment of 0.2: " + sumFloatingPointNumbers(0.5, 2.5, 0.2));
+        System.out.println("Sum of numbers from 0.5 to 2.5 with increment of 0.2: " + sumNumbers(0.5, 2.5, 0.2));
     }
 }
