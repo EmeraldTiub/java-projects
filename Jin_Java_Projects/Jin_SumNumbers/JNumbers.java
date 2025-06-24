@@ -1,4 +1,4 @@
-package JNumbers;
+package Jin_SumNumbers;
 
 public class JNumbers {
     /**
