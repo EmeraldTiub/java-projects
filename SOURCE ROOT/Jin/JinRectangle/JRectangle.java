@@ -80,11 +80,13 @@ public class JRectangle extends JPanel {
         JFrame frame = new JFrame("Rectangle With Name");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // Forgot to set the background color to white.
+        frame.setBackground(Color.WHITE);
+
         // Set name, width, and height to the values that the user put in.
         frame.add(new JRectangle(name, width, height));
 
         // Make the frame visible and set the size.
-
         // The width and height should both be 200, because the square at maximum is a 100x100.
         frame.setSize(200, 200);
         frame.setVisible(true);
