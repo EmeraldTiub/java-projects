@@ -1,0 +1,8 @@
+- Prompt the user in the console using Scanner and println
+    - While there's 2 words (use split for this), keep asking the user
+- Do the same thing for width and height but instead of having 2 words, while it's not within 1 and 100'
+Prompting should be in another function for simplicity
+
+- use the background fill tool from graphics
+- use the font and add text tool from graphics
+- use the fill rectangle tool
