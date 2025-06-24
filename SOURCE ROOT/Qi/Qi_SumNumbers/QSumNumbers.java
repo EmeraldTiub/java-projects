@@ -1,5 +1,3 @@
-package Qi_SumNumbers;
-
 public class QSumNumbers {
     /*
      * Prints out what was returned from the variations of sum()
