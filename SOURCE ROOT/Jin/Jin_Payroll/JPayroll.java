@@ -1,4 +1,4 @@
-package Jin_Payroll;
+package Jin.Jin_Payroll;
 
 public class JPayroll {
     /**

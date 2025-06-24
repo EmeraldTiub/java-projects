@@ -1,4 +1,4 @@
-package Jin_SumNumbers;
+package Jin.Jin_SumNumbers;
 
 public class JNumbers {
     /**

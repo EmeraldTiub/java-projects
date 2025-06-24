@@ -1,4 +1,4 @@
-package Jin_DisplayCustomerData;
+package Jin.Jin_DisplayCustomerData;
 
 public class JDisplayCustomerData {
     public static void main(String[] args) {
