@@ -20,13 +20,10 @@ public class QDrawARectangle extends JPanel {
         // Prompt the user for their name
         System.out.println("What is your name? ");
         name = scan.nextLine();
-        int length = name.split(" ").length; // Split by spaces to see how many words there are
-
-        while (length > 1) { // As long as the user doesn't input a valid name (input includes more than one word), keep prompting
+        while (name.contains(" ")) { // As long as the user includes a space (input includes more than one word), keep prompting
             System.out.println("Cannot enter more than one word.");
             System.out.println("What is your name? ");
             name = scan.nextLine();
-            length = name.split(" ").length;
         }
 
         // Prompt the user for the width of the rectangle
@@ -89,7 +86,7 @@ public class QDrawARectangle extends JPanel {
         JFrame frame = new JFrame("Draw a Rectangle");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // This means that when the window is closed, the program will stop running
         frame.add(new QDrawARectangle()); // Adds a new instance of QDrawARectangle to the JFrame. This makes added objects visible.
-        frame.setSize(400, 600); // Sets the size of the window
+        frame.setSize(230, 250); // Sets the size of the window
         frame.setVisible(true); // Makes the window visible
     }
 }
