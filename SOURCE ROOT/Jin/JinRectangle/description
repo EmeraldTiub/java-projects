@@ -1,0 +1,9 @@
+Demo: Draw a Rectangle
+
+- Ask the user for their name, handling the case where they type > 1 words.
+- Ask the user for rectangle dimensions (range for each is 1..100)
+- Set a white background for the drawing area
+- Draw a text-based salutation (all upper case), Arial Bold, 12 points
+- Draw a blue-filled rectangle of the specified dimensions.
+- Example output shown at right for 45x90 rectangle
+

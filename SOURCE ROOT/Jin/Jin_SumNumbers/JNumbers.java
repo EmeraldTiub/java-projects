@@ -11,6 +11,7 @@ public class JNumbers {
         // Sum up the numbers from 1 to number.
         for (int i = 1; i <= number; i++) {
             sum += i;
+
         }
         return sum;
     }

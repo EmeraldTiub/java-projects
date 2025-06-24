@@ -1,0 +1,3 @@
+1. Use a Scanner to do the user-input parts.
+2. Use javax.swing and java.awt to draw the blue rectangle.
+3. Use java.awt to put the name at the top-left corner of the panel.
