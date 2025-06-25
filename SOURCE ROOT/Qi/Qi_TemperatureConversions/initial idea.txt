@@ -1,0 +1,10 @@
+1. For the menu, just have a print statement with \n for the line breaks or just have separate print statements
+2. Out of range or bad data type (use [variable] instanceOf Integer), have a while loop to keep prompting
+3. 6 functions for each conversion
+    - F -> C              (F - 32) / 1.8
+    - F -> K              ((F - 32) / 1.8) + 273.15
+    - C -> F              (C * 1.8) + 32
+    - C -> K              C + 273.15
+    - K -> F              ((K - 273.15) * 1.8) + 32
+    - K -> C              K - 273.15
+4. Prompt user for temperature value (use while loop if user puts in a negative value)
