@@ -130,6 +130,8 @@ public class JConversion {
                         System.out.println("Choose how many degrees Kelvin to convert to Fahrenheit");
                         kelvin = Double.parseDouble(scanner.nextLine());
                     }
+                    // Print out the converted version.
+                    System.out.println(KtoF(kelvin));
                 }
                 if (choice == 6) {
                     System.out.println("Choose how many degrees Kelvin to convert to Celsius");
@@ -139,6 +141,8 @@ public class JConversion {
                         System.out.println("Choose how many degrees Kelvin to convert to Celsius");
                         kelvin = Double.parseDouble(scanner.nextLine());
                     }
+                    // Print out the converted version.
+                    System.out.println(KtoC(kelvin));
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Could not interpret that. Exiting...");
