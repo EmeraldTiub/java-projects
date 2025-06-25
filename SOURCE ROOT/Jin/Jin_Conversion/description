@@ -1,0 +1,13 @@
+Demo: Temperature Conversions in a menu-based program
+
+- Displays a menu letting user make various conversions between
+  Fahrenheit, Celsius, and Kelvin.
+
+- Menu input guards against range errors and bad data types.
+
+- Create functions for each conversion
+
+- Functions don't allow invalid arguments, e.g., Kelvin values must
+  be non-negative
+
+- BONUS: unit testing on conversion functions
