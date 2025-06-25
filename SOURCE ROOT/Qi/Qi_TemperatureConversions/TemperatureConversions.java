@@ -10,22 +10,24 @@ public class TemperatureConversions {
      */
     public static void main(String[] args) {
         // Display the menu to the user
+        System.out.println("Temperature Conversions Menu");
         System.out.println("1. Fahrenheit to Celsius");
         System.out.println("2. Fahrenheit to Kelvin");
         System.out.println("3. Celsius to Fahrenheit");
         System.out.println("4. Celsius to Kelvin");
         System.out.println("5. Kelvin to Fahrenheit");
         System.out.println("6. Kelvin to Celsius");
+        System.out.println("0. EXIT");
 
         Scanner scan = new Scanner(System.in); // Set up the scanner to read console lines
 
         // Prompt the user for their choice
-        System.out.println("Which conversion would you like to do (Enter a number from 1 to 6)? ");
+        System.out.println("Which conversion would you like to do (Enter a number from 1 to 6) or exit (0)? ");
         int response = 0;
         while (true) {
             if (scan.hasNextInt()) {
                 int input = scan.nextInt();
-                if (1 <= input && input <= 6) { // When their choice is valid, store that and break out of the while loop
+                if (0 <= input && input <= 6) { // When their choice is valid, store that and break out of the while loop
                     response = input;
                     break;
                 }
@@ -40,20 +42,37 @@ public class TemperatureConversions {
                 System.out.println("Which conversion would you like to do (Enter a number from 1 to 6)? ");
             }
         }
+        if (response == 0) {
+            System.out.println("Exiting...");
+            scan.close();
+            return;
+        }
 
+        System.out.println("Enter a temperature (Kelvin temperatures must be non-negative): ");
+        double temp = 0.0;
+        while (true) {
+            if (scan.hasNextDouble()) {
+                temp = scan.nextDouble();
+                break;
+            } else {
+                scan.next();
+                System.out.println("Invalid input. Please enter a number, whole or decimal.");
+                System.out.println("Enter a temperature (Kelvin temperatures must be non-negative): ");
+            }
+        }
         // Run the corresponding conversion function depending on the number chosen
         if (response == 1) {
-            FtoC();
+            System.out.println(FtoC(temp));
         } else if (response == 2) {
-            FtoK();
+            System.out.println(FtoK(temp));
         } else if (response == 3) {
-            CtoF();
+            System.out.println(CtoF(temp));
         } else if (response == 4) {
-            CtoK();
+            System.out.println(CtoK(temp));
         } else if (response == 5) {
-            KtoF();
+            System.out.println(KtoF(temp));
         } else {
-            KtoC();
+            System.out.println(KtoC(temp));
         }
         scan.close(); // close the scanner, not needed anymore
     }
@@ -63,21 +82,8 @@ public class TemperatureConversions {
      *
      * @return The given Fahrenheit temperature in Celsius
      */
-    public static void FtoC() {
-        Scanner scan = new Scanner(System.in); // set up scanner again (this is why scan.close() is after all the function-calling)
-        System.out.println("Enter the temperature in Fahrenheit: "); // Prompt the user to put in a Fahrenheit temperature
-        double fahrenheit = 0; // Set the variable as a double because temperature can be decimals
-        while (true) {
-            if (scan.hasNextDouble()) { // If the user put in a whole number or decimal, store that and break out of the while loop
-                fahrenheit = scan.nextDouble();
-                break;
-            } else { // For any other reason, ask again
-                scan.next();
-                System.out.println("Invalid input. Please enter a number (whole or decimal).");
-                System.out.println("Enter the temperature in Fahrenheit: ");
-            }
-        }
-        System.out.println("The temperature in Celsius is " + (fahrenheit - 32) / 1.8); // Convert from Fahrenheit to Celsius
+    public static String FtoC(double fahrenheit) {
+        return "The temperature in Celsius is " + (fahrenheit - 32) / 1.8; // Convert from Fahrenheit to Celsius
     }
 
     /*
@@ -85,118 +91,49 @@ public class TemperatureConversions {
      *
      * @return The given Fahrenheit temperature in Kelvin
      */
-    public static void FtoK() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter the temperature in Fahrenheit: ");
-        double fahrenheit = 0;
-        while (true) {
-            if (scan.hasNextDouble()) {
-                fahrenheit = scan.nextDouble();
-                break;
-            } else {
-                scan.next();
-                System.out.println("Invalid input. Please enter a number (whole or decimal).");
-                System.out.println("Enter the temperature in Fahrenheit: ");
-            }
-        }
-        System.out.println("The temperature in Kelvin is " + ((fahrenheit - 32) / 1.8) + 273.15); // Convert
+    public static String FtoK(double fahrenheit) {
+        return "The temperature in Kelvin is " + ((fahrenheit - 32) / 1.8) + 273.15; // Convert
     }
 
     /*
      * Convert from Celsius to Fahrenheit
      *
-     * @return The given Celsius temperature to Fahrenheit
+     * @return The given Celsius temperature in Fahrenheit
      */
-    public static void CtoF() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter the temperature in Celsius: ");
-        double celsius = 0;
-        while (true) {
-            if (scan.hasNextDouble()) {
-                celsius = scan.nextDouble();
-                break;
-            } else {
-                scan.next();
-                System.out.println("Invalid input. Please enter a number (whole or decimal).");
-                System.out.println("Enter the temperature in Celsius: ");
-            }
-        }
-        System.out.println("The temperature in Fahrenheit is " + ((celsius * 1.8) + 32)); //
+    public static String CtoF(double celsius) {
+        return "The temperature in Fahrenheit is " + ((celsius * 1.8) + 32); //
     }
 
     /*
      * Convert from Celsius to Kelvin
      *
-     * @return The given Celsius temperature to Kelvin
+     * @return The given Celsius temperature in Kelvin
      */
-    public static void CtoK() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter the temperature in Celsius: ");
-        double celsius = 0;
-        while (true) {
-            if (scan.hasNextDouble()) {
-                celsius = scan.nextDouble();
-                break;
-            } else {
-                scan.next();
-                System.out.println("Invalid input. Please enter a number (whole or decimal).");
-                System.out.println("Enter the temperature in Celsius: ");
-            }
-        }
-        System.out.println("The temperature in Kelvin is " + (celsius + 273.15)); // Convert from Celsius to Kelvin
+    public static String CtoK(double celsius) {
+        return "The temperature in Kelvin is " + (celsius + 273.15); // Convert from Celsius to Kelvin
     }
 
     /*
      * Convert from Kelvin to Fahrenheit
      *
-     * @return The given Kelvin temperature to Fahrenheit
+     * @return The given Kelvin temperature in Fahrenheit
      */
-    public static void KtoF() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter the temperature in Kelvin: ");
-        double kelvin = 0;
-        while (true) {
-            if (scan.hasNextDouble()) {
-                kelvin = scan.nextDouble();
-                if (kelvin >= 0) {
-                    break;
-                } else {
-                    System.out.println("Invalid input. Please enter a non-negative number (whole or decimal).");
-                    System.out.println("Enter the temperature in Kelvin: ");
-                }
-            } else {
-                scan.next();
-                System.out.println("Invalid input. Please enter a non-negative number (whole or decimal).");
-                System.out.println("Enter the temperature in Kelvin: ");
-            }
+    public static String KtoF(double kelvin) {
+        if (kelvin < 0) {
+            throw new IllegalArgumentException("Kelvin degrees cannot be negative. Exiting...");
         }
-        System.out.println("The temperature in Fahrenheit is " + ((kelvin - 273.15) * 1.8) + 32); // Convert from Fahrenheit to Celsius
+        return "The temperature in Fahrenheit is " + ((kelvin - 273.15) * 1.8) + 32; // Convert from Fahrenheit to Celsius
     }
 
     /*
      * Convert from Kelvin to Celsius
      *
-     * @return The given Kelvin temperature to Celsius
+     * @return The given Kelvin temperature in Celsius
      */
-    public static void KtoC() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter the temperature in Kelvin: ");
-        double kelvin = 0;
-        while (true) {
-            if (scan.hasNextDouble()) {
-                kelvin = scan.nextDouble();
-                if (kelvin >= 0) {
-                    break;
-                } else {
-                    System.out.println("Invalid input. Please enter a non-negative number (whole or decimal).");
-                    System.out.println("Enter the temperature in Kelvin: ");
-                }
-            } else {
-                scan.next();
-                System.out.println("Invalid input. Please enter a non-negative number (whole or decimal).");
-                System.out.println("Enter the temperature in Kelvin: ");
-            }
+    public static String KtoC(double kelvin) {
+        if (kelvin < 0) {
+            throw new IllegalArgumentException("Kelvin degrees cannot be negative. Exiting...");
         }
-        System.out.println("The temperature in Fahrenheit is " + (kelvin - 273.15));
+        return "The temperature in Fahrenheit is " + (kelvin - 273.15);
     }
 }
