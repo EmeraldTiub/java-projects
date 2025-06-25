@@ -62,17 +62,17 @@ public class TemperatureConversions {
         }
         // Run the corresponding conversion function depending on the number chosen
         if (response == 1) {
-            System.out.println("The temperature in Celsius is " + FtoC(temp));
+            System.out.printf("The temperature in Celsius is %.2f", FtoC(temp));
         } else if (response == 2) {
-            System.out.println("The temperature in Kelvin is " + FtoK(temp));
+            System.out.printf("The temperature in Kelvin is %.2f", FtoK(temp));
         } else if (response == 3) {
-            System.out.println("The temperature in Fahrenheit is " + CtoF(temp));
+            System.out.printf("The temperature in Fahrenheit is %.2f", CtoF(temp));
         } else if (response == 4) {
-            System.out.println("The temperature in Kelvin is " + CtoK(temp));
+            System.out.printf("The temperature in Kelvin is %.2f", CtoK(temp));
         } else if (response == 5) {
-            System.out.println("The temperature in Fahrenheit is " + KtoF(temp));
+            System.out.printf("The temperature in Fahrenheit is %.2f", KtoF(temp));
         } else {
-            System.out.println("The temperature in Celsius is " + KtoC(temp));
+            System.out.printf("The temperature in Celsius is %.2f", KtoC(temp));
         }
         scan.close(); // close the scanner, not needed anymore
     }
@@ -106,7 +106,7 @@ public class TemperatureConversions {
 
     /*
      * Convert from Celsius to Kelvin
-     *
+     *23,469,013,569,005
      * @return The given Celsius temperature in Kelvin
      */
     public static double CtoK(double celsius) {
