@@ -10,22 +10,24 @@ public class TemperatureConversions {
      */
     public static void main(String[] args) {
         // Display the menu to the user
+        System.out.println("Temperature Conversions Menu");
         System.out.println("1. Fahrenheit to Celsius");
         System.out.println("2. Fahrenheit to Kelvin");
         System.out.println("3. Celsius to Fahrenheit");
         System.out.println("4. Celsius to Kelvin");
         System.out.println("5. Kelvin to Fahrenheit");
         System.out.println("6. Kelvin to Celsius");
+        System.out.println("0. EXIT");
 
         Scanner scan = new Scanner(System.in); // Set up the scanner to read console lines
 
         // Prompt the user for their choice
-        System.out.println("Which conversion would you like to do (Enter a number from 1 to 6)? ");
+        System.out.println("Which conversion would you like to do (Enter a number from 1 to 6) or exit (0)? ");
         int response = 0;
         while (true) {
             if (scan.hasNextInt()) {
                 int input = scan.nextInt();
-                if (1 <= input && input <= 6) { // When their choice is valid, store that and break out of the while loop
+                if (0 <= input && input <= 6) { // When their choice is valid, store that and break out of the while loop
                     response = input;
                     break;
                 }
@@ -39,6 +41,11 @@ public class TemperatureConversions {
                 System.out.println("Invalid input. Please enter a number from 1 to 6.");
                 System.out.println("Which conversion would you like to do (Enter a number from 1 to 6)? ");
             }
+        }
+        if (response == 0) {
+            System.out.println("Exiting...");
+            scan.close();
+            return;
         }
 
         System.out.println("Enter a temperature (Kelvin temperatures must be non-negative): ");
