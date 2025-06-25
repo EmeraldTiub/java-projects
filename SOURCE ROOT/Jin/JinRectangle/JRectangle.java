@@ -58,7 +58,15 @@ public class JRectangle extends JPanel {
         }
 
         System.out.println("Enter rectangle width: ");
-        Integer width = Integer.parseInt(scanner.nextLine());
+        // If the user doesn't put in a number, exit the program.
+        Integer width = null;
+        try {
+            width = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter an Integer for the width. Exiting...");
+            return;
+        }
+
         // Keep prompting the user if they make the rectangle width out of the range of 1..100
         while (width < 1 || width > 100) {
             System.out.println("Please type a number in the range of 1..100. Enter rectangle width: ");
@@ -66,7 +74,14 @@ public class JRectangle extends JPanel {
         }
 
         System.out.println("Enter rectangle height: ");
-        Integer height = Integer.parseInt(scanner.next());
+
+        // If the user doesn't put in a number, exit the program.
+        Integer height = null;
+        try {
+            height = Integer.parseInt(scanner.next());
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter an integer for the height. Exiting...");
+        }
         // Keep prompting the user if they make the rectangle height out of the range of 1..100
         while (height < 1 || height > 100) {
             System.out.println("Please type a number in the range of 1..100. Enter rectangle height: ");
@@ -80,13 +95,16 @@ public class JRectangle extends JPanel {
         JFrame frame = new JFrame("Rectangle With Name");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // Forgot to set the background color to white.
+        frame.setBackground(Color.WHITE);
+
         // Set name, width, and height to the values that the user put in.
         frame.add(new JRectangle(name, width, height));
 
         // Make the frame visible and set the size.
-
         // The width and height should both be 200, because the square at maximum is a 100x100.
         frame.setSize(200, 200);
         frame.setVisible(true);
+
     }
 }

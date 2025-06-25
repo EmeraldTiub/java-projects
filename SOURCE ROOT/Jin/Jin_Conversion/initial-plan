@@ -1,0 +1,9 @@
+1. Use Scanner + while loops to make the menu-choice part.
+2. Make 6 functions:
+    - F to C
+    - F to K
+    - K to F
+    - C to F
+    - K to C
+    - C to K
+3. In the main function, after the user chooses the conversion, call that function.
