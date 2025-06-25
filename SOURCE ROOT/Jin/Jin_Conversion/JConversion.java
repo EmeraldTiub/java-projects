@@ -105,22 +105,26 @@ public class JConversion {
                 if (choice == 1) {
                     System.out.println("Choose how many degrees Fahrenheit to convert to Celsius: ");
                     String fahrenheit = scanner.nextLine();
-                    System.out.println(FtoC(Double.parseDouble(fahrenheit)));
+                    double res = FtoC(Double.parseDouble(fahrenheit));
+                    System.out.printf("Converted: %.2f\n", res);
                 }
                 if (choice == 2) {
                     System.out.println("Choose how many degrees Fahrenheit to convert to Kelvin: ");
                     String fahrenheit = scanner.nextLine();
-                    System.out.println(FtoK(Double.parseDouble(fahrenheit)));
+                    double res = FtoK(Double.parseDouble(fahrenheit));
+                    System.out.printf("Converted: %.2f\n", res);
                 }
                 if (choice == 3) {
                     System.out.println("Choose how many degrees Celsius to convert to Kelvin: ");
                     String celsius = scanner.nextLine();
-                    System.out.println(CtoK(Double.parseDouble(celsius)));
+                    double res = CtoK(Double.parseDouble(celsius));
+                    System.out.printf("Converted: %.2f\n", res);
                 }
                 if (choice == 4) {
-                    System.out.println("Choose how many degrees Celsius to convert to Kelvin: ");
+                    System.out.println("Choose how many degrees Celsius to convert to Fahrenheit: ");
                     String celsius = scanner.nextLine();
-                    System.out.println(CtoK(Double.parseDouble(celsius)));
+                    double res = CtoF(Double.parseDouble(celsius));
+                    System.out.printf("Converted: %.2f\n", res);
                 }
                 if (choice == 5) {
                     System.out.println("Choose how many degrees Kelvin to convert to Fahrenheit");
@@ -131,7 +135,7 @@ public class JConversion {
                         kelvin = Double.parseDouble(scanner.nextLine());
                     }
                     // Print out the converted version.
-                    System.out.println(KtoF(kelvin));
+                    System.out.printf("Converted: %.2f\n", KtoF(kelvin));
                 }
                 if (choice == 6) {
                     System.out.println("Choose how many degrees Kelvin to convert to Celsius");
@@ -142,7 +146,7 @@ public class JConversion {
                         kelvin = Double.parseDouble(scanner.nextLine());
                     }
                     // Print out the converted version.
-                    System.out.println(KtoC(kelvin));
+                    System.out.printf("Converted: %.2f\n", KtoC(kelvin));
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Could not interpret that. Exiting...");
