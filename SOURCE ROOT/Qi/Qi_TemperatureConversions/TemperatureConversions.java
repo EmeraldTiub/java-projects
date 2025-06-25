@@ -9,71 +9,73 @@ public class TemperatureConversions {
      * @return Results from the conversion function called
      */
     public static void main(String[] args) {
-        // Display the menu to the user
-        System.out.println("Temperature Conversions Menu");
-        System.out.println("1. Fahrenheit to Celsius");
-        System.out.println("2. Fahrenheit to Kelvin");
-        System.out.println("3. Celsius to Fahrenheit");
-        System.out.println("4. Celsius to Kelvin");
-        System.out.println("5. Kelvin to Fahrenheit");
-        System.out.println("6. Kelvin to Celsius");
-        System.out.println("0. EXIT");
 
         Scanner scan = new Scanner(System.in); // Set up the scanner to read console lines
 
-        // Prompt the user for their choice
-        System.out.println("Which conversion would you like to do (Enter a number from 1 to 6) or exit (0)? ");
-        int response = 0;
-        while (true) {
-            if (scan.hasNextInt()) {
-                int input = scan.nextInt();
-                if (0 <= input && input <= 6) { // When their choice is valid, store that and break out of the while loop
-                    response = input;
-                    break;
-                }
-                else { // If the input is an int, but it isn't within 1 and 6, ask again
-                    // Don't do scan.next() here because scan.nextInt() was already used before
+        int response;
+        do {
+            // Display the menu to the user
+            System.out.println("Temperature Conversions Menu");
+            System.out.println("1. Fahrenheit to Celsius");
+            System.out.println("2. Fahrenheit to Kelvin");
+            System.out.println("3. Celsius to Fahrenheit");
+            System.out.println("4. Celsius to Kelvin");
+            System.out.println("5. Kelvin to Fahrenheit");
+            System.out.println("6. Kelvin to Celsius");
+            System.out.println("0. EXIT");
+            // Prompt the user for their choice
+            System.out.println("Which conversion would you like to do (Enter a number from 1 to 6) or exit (0)? ");
+            while (true) {
+                if (scan.hasNextInt()) {
+                    int input = scan.nextInt();
+                    if (0 <= input && input <= 6) { // When their choice is valid, store that and break out of the while loop
+                        response = input;
+                        break;
+                    } else { // If the input is an int, but it isn't within 1 and 6, ask again
+                        // Don't do scan.next() here because scan.nextInt() was already used before
+                        System.out.println("Invalid input. Please enter a number from 1 to 6.");
+                        System.out.println("Which conversion would you like to do (Enter a number from 1 to 6)? ");
+                    }
+                } else { // If the user didn't put in a number, ask again
+                    scan.next();
                     System.out.println("Invalid input. Please enter a number from 1 to 6.");
                     System.out.println("Which conversion would you like to do (Enter a number from 1 to 6)? ");
                 }
-            } else { // If the user didn't put in a number, ask again
-                scan.next();
-                System.out.println("Invalid input. Please enter a number from 1 to 6.");
-                System.out.println("Which conversion would you like to do (Enter a number from 1 to 6)? ");
             }
-        }
-        if (response == 0) {
-            System.out.println("Exiting...");
-            scan.close();
-            return;
-        }
+            if (response == 0) {
+                System.out.println("Exiting...");
+                scan.close();
+                return;
+            }
 
-        System.out.println("Enter a temperature (Kelvin temperatures must be non-negative): ");
-        double temp = 0.0;
-        while (true) {
-            if (scan.hasNextDouble()) {
-                temp = scan.nextDouble();
-                break;
-            } else {
-                scan.next();
-                System.out.println("Invalid input. Please enter a number, whole or decimal.");
-                System.out.println("Enter a temperature (Kelvin temperatures must be non-negative): ");
+            System.out.println("Enter a temperature (Kelvin temperatures must be non-negative): ");
+            double temp = 0.0;
+            while (true) {
+                if (scan.hasNextDouble()) {
+                    temp = scan.nextDouble();
+                    break;
+                } else {
+                    scan.next();
+                    System.out.println("Invalid input. Please enter a number, whole or decimal.");
+                    System.out.println("Enter a temperature (Kelvin temperatures must be non-negative): ");
+                }
             }
-        }
-        // Run the corresponding conversion function depending on the number chosen
-        if (response == 1) {
-            System.out.printf("The temperature in Celsius is %.2f", FtoC(temp));
-        } else if (response == 2) {
-            System.out.printf("The temperature in Kelvin is %.2f", FtoK(temp));
-        } else if (response == 3) {
-            System.out.printf("The temperature in Fahrenheit is %.2f", CtoF(temp));
-        } else if (response == 4) {
-            System.out.printf("The temperature in Kelvin is %.2f", CtoK(temp));
-        } else if (response == 5) {
-            System.out.printf("The temperature in Fahrenheit is %.2f", KtoF(temp));
-        } else {
-            System.out.printf("The temperature in Celsius is %.2f", KtoC(temp));
-        }
+            // Run the corresponding conversion function depending on the number chosen
+            if (response == 1) {
+                System.out.printf("The temperature in Celsius is %.2f", FtoC(temp));
+            } else if (response == 2) {
+                System.out.printf("The temperature in Kelvin is %.2f", FtoK(temp));
+            } else if (response == 3) {
+                System.out.printf("The temperature in Fahrenheit is %.2f", CtoF(temp));
+            } else if (response == 4) {
+                System.out.printf("The temperature in Kelvin is %.2f", CtoK(temp));
+            } else if (response == 5) {
+                System.out.printf("The temperature in Fahrenheit is %.2f", KtoF(temp));
+            } else {
+                System.out.printf("The temperature in Celsius is %.2f", KtoC(temp));
+            }
+            System.out.println("\n\n");
+        } while (response != 0);
         scan.close(); // close the scanner, not needed anymore
     }
 
