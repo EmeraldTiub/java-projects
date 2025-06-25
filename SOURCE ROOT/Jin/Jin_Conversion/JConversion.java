@@ -41,6 +41,10 @@ public class JConversion {
      * @return the Fahrenheit conversion.
      */
     public static double KtoF(double kelvin) {
+        // Add a preconditions because Kelvin values have to be non-negative.
+        if (kelvin < 0) {
+            throw new IllegalArgumentException("Please enter a non-negative value for Kelvin degrees.");
+        }
         return ((kelvin - 273.15) * (9.0 / 5)) + 32;
     }
     /**
@@ -49,6 +53,10 @@ public class JConversion {
      * @return the Celsius conversion.
      */
     public static double KtoC(double kelvin) {
+        // Add a precondition because Kelvin values have to be non-negative.
+        if (kelvin < 0) {
+            throw new IllegalArgumentException("Please enter a non-negative value for Kelvin degrees.");
+        }
         return kelvin - 273.15;
     }
     /**
