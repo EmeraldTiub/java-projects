@@ -62,17 +62,17 @@ public class TemperatureConversions {
         }
         // Run the corresponding conversion function depending on the number chosen
         if (response == 1) {
-            System.out.println(FtoC(temp));
+            System.out.println("The temperature in Celsius is " + FtoC(temp));
         } else if (response == 2) {
-            System.out.println(FtoK(temp));
+            System.out.println("The temperature in Kelvin is " + FtoK(temp));
         } else if (response == 3) {
-            System.out.println(CtoF(temp));
+            System.out.println("The temperature in Fahrenheit is " + CtoF(temp));
         } else if (response == 4) {
-            System.out.println(CtoK(temp));
+            System.out.println("The temperature in Kelvin is " + CtoK(temp));
         } else if (response == 5) {
-            System.out.println(KtoF(temp));
+            System.out.println("The temperature in Fahrenheit is " + KtoF(temp));
         } else {
-            System.out.println(KtoC(temp));
+            System.out.println("The temperature in Celsius is " + KtoC(temp));
         }
         scan.close(); // close the scanner, not needed anymore
     }
@@ -82,8 +82,8 @@ public class TemperatureConversions {
      *
      * @return The given Fahrenheit temperature in Celsius
      */
-    public static String FtoC(double fahrenheit) {
-        return "The temperature in Celsius is " + (fahrenheit - 32) / 1.8; // Convert from Fahrenheit to Celsius
+    public static double FtoC(double fahrenheit) {
+        return (fahrenheit - 32) / 1.8; // Convert from Fahrenheit to Celsius
     }
 
     /*
@@ -91,8 +91,8 @@ public class TemperatureConversions {
      *
      * @return The given Fahrenheit temperature in Kelvin
      */
-    public static String FtoK(double fahrenheit) {
-        return "The temperature in Kelvin is " + ((fahrenheit - 32) / 1.8) + 273.15; // Convert
+    public static double FtoK(double fahrenheit) {
+        return ((fahrenheit - 32) / 1.8) + 273.15; // Convert
     }
 
     /*
@@ -100,8 +100,8 @@ public class TemperatureConversions {
      *
      * @return The given Celsius temperature in Fahrenheit
      */
-    public static String CtoF(double celsius) {
-        return "The temperature in Fahrenheit is " + ((celsius * 1.8) + 32); //
+    public static double CtoF(double celsius) {
+        return (celsius * 1.8) + 32; //
     }
 
     /*
@@ -109,8 +109,8 @@ public class TemperatureConversions {
      *
      * @return The given Celsius temperature in Kelvin
      */
-    public static String CtoK(double celsius) {
-        return "The temperature in Kelvin is " + (celsius + 273.15); // Convert from Celsius to Kelvin
+    public static double CtoK(double celsius) {
+        return (celsius + 273.15); // Convert from Celsius to Kelvin
     }
 
     /*
@@ -118,11 +118,11 @@ public class TemperatureConversions {
      *
      * @return The given Kelvin temperature in Fahrenheit
      */
-    public static String KtoF(double kelvin) {
+    public static double KtoF(double kelvin) {
         if (kelvin < 0) {
             throw new IllegalArgumentException("Kelvin degrees cannot be negative. Exiting...");
         }
-        return "The temperature in Fahrenheit is " + ((kelvin - 273.15) * 1.8) + 32; // Convert from Fahrenheit to Celsius
+        return ((kelvin - 273.15) * 1.8) + 32; // Convert from Fahrenheit to Celsius
     }
 
     /*
@@ -130,10 +130,10 @@ public class TemperatureConversions {
      *
      * @return The given Kelvin temperature in Celsius
      */
-    public static String KtoC(double kelvin) {
+    public static double KtoC(double kelvin) {
         if (kelvin < 0) {
             throw new IllegalArgumentException("Kelvin degrees cannot be negative. Exiting...");
         }
-        return "The temperature in Fahrenheit is " + (kelvin - 273.15);
+        return (kelvin - 273.15);
     }
 }
