@@ -69,12 +69,14 @@ public class JConversion {
 
         while (true) {
             // Show the choices for the user.
+            System.out.println("Choose a conversion (or 0 to exit): ");
             System.out.println("1. Fahrenheit to Celsius");
             System.out.println("2. Fahrenheit to Kelvin");
             System.out.println("3. Celsius to Kelvin");
             System.out.println("4. Celsius to Fahrenheit");
             System.out.println("5. Kelvin to Fahrenheit");
             System.out.println("6. Kelvin to Celsius");
+            System.out.println("0. Exit");
 
             // Keep prompting the user if they input something invalid.
             Integer choice;
@@ -94,8 +96,12 @@ public class JConversion {
                 }
             }
 
-            // If the user puts in an invalid data type, terminate the script.
+            // If the user puts in an invalid data type or chooses the exit option,
+            // terminate the script.
             try {
+                if (choice == 0) {
+                    return;
+                }
                 if (choice == 1) {
                     System.out.println("Choose how many degrees Fahrenheit to convert to Celsius: ");
                     String fahrenheit = scanner.nextLine();
