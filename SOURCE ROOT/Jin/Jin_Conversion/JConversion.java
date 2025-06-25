@@ -96,61 +96,36 @@ public class JConversion {
                 }
             }
 
-            // If the user puts in an invalid data type or chooses the exit option,
-            // terminate the script.
+            System.out.println("Choose how many degrees to convert: ");
+
+            double degrees;
             try {
-                if (choice == 0) {
-                    return;
-                }
-                if (choice == 1) {
-                    System.out.println("Choose how many degrees Fahrenheit to convert to Celsius: ");
-                    String fahrenheit = scanner.nextLine();
-                    double res = FtoC(Double.parseDouble(fahrenheit));
-                    System.out.printf("Converted: %.2f\n", res);
-                }
-                if (choice == 2) {
-                    System.out.println("Choose how many degrees Fahrenheit to convert to Kelvin: ");
-                    String fahrenheit = scanner.nextLine();
-                    double res = FtoK(Double.parseDouble(fahrenheit));
-                    System.out.printf("Converted: %.2f\n", res);
-                }
-                if (choice == 3) {
-                    System.out.println("Choose how many degrees Celsius to convert to Kelvin: ");
-                    String celsius = scanner.nextLine();
-                    double res = CtoK(Double.parseDouble(celsius));
-                    System.out.printf("Converted: %.2f\n", res);
-                }
-                if (choice == 4) {
-                    System.out.println("Choose how many degrees Celsius to convert to Fahrenheit: ");
-                    String celsius = scanner.nextLine();
-                    double res = CtoF(Double.parseDouble(celsius));
-                    System.out.printf("Converted: %.2f\n", res);
-                }
-                if (choice == 5) {
-                    System.out.println("Choose how many degrees Kelvin to convert to Fahrenheit");
-                    Double kelvin = Double.parseDouble(scanner.nextLine());
-                    while (kelvin < 0) {
-                        System.out.println("Please enter a non-negative value.");
-                        System.out.println("Choose how many degrees Kelvin to convert to Fahrenheit");
-                        kelvin = Double.parseDouble(scanner.nextLine());
-                    }
-                    // Print out the converted version.
-                    System.out.printf("Converted: %.2f\n", KtoF(kelvin));
-                }
-                if (choice == 6) {
-                    System.out.println("Choose how many degrees Kelvin to convert to Celsius");
-                    Double kelvin = Double.parseDouble(scanner.nextLine());
-                    while (kelvin < 0) {
-                        System.out.println("Please enter a non-negative value.");
-                        System.out.println("Choose how many degrees Kelvin to convert to Celsius");
-                        kelvin = Double.parseDouble(scanner.nextLine());
-                    }
-                    // Print out the converted version.
-                    System.out.printf("Converted: %.2f\n", KtoC(kelvin));
-                }
+                degrees = Double.parseDouble(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Could not interpret that. Exiting...");
+                System.out.println("Could not interpret user's input. Exiting...");
                 return;
+            }
+
+            if (choice == 0) {
+                return;
+            }
+            if (choice == 1) {
+                System.out.printf("Converted: %.2f\n", FtoC(degrees));
+            }
+            if (choice == 2) {
+                System.out.printf("Converted: %.2f\n", FtoK(degrees));
+            }
+            if (choice == 3) {
+                System.out.printf("Converted: %.2f\n", CtoK(degrees));
+            }
+            if (choice == 4) {
+                System.out.printf("Converted: %.2f\n", CtoF(degrees));
+            }
+            if (choice == 5) {
+                System.out.printf("Converted: %.2f\n", KtoF(degrees));
+            }
+            if (choice == 6) {
+                System.out.printf("Converted: %.2f\n", KtoC(degrees));
             }
         }
     }
