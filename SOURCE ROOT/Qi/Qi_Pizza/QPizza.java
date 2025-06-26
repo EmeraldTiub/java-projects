@@ -1,6 +1,7 @@
 package Qi.Qi_Pizza;
 
 public class QPizza {
+
     private enum PizzaType { // enum for all the pizza types (private)
         Cheese,
         Pepperoni,
@@ -27,9 +28,9 @@ public class QPizza {
         QPizza p = new QPizza();
 
         // Run the Pizza functions
-        Pizza();
-        Pizza(type, size);
-        Pizza(type, size, thinCrust, specInstruct);
+        new QPizza(PizzaType.Cheese, PizzaSize.Small, true, "add pineapple");
+        new QPizza(PizzaType.Cheese, PizzaSize.Small);
+        new QPizza();
 
         // See pizza stats
         System.out.println(p.toString());
@@ -41,7 +42,6 @@ public class QPizza {
         getSpecInstruct();
         getArea(PizzaSize.Medium);
 
-
         setType(PizzaType.Cheese); // Set the type of the pizza to cheese
         setSize(PizzaSize.Small); // Set the size of the pizza to small
         setThinCrust(true); // Make thin crust true
@@ -51,12 +51,15 @@ public class QPizza {
     }
 
     /*
-     * Get a pizza with the default stats
+     * Get a pizza with specified type, size, thinCrust, and specInstruct
      *
-     * @return "Pizza() was ran."
+     * @return "Pizza(type, size, thinCrust, specInstruct) was ran."
      */
-    public static void Pizza() {
-        System.out.println("Pizza() was ran.");
+    public QPizza(PizzaType type, PizzaSize size, boolean thinCrust, String specInstruct) {
+        this.type = type;
+        this.size = size;
+        this.thinCrust = thinCrust;
+        this.specInstruct = specInstruct;
     }
 
     /*
@@ -64,17 +67,17 @@ public class QPizza {
      *
      * @return "Pizza(type, size) was ran."
      */
-    public static void Pizza(PizzaType type, PizzaSize size) {
-        System.out.println("Pizza(type, size) was ran.");
+    public QPizza(PizzaType type, PizzaSize size) {
+        this(type, size, false, "");
     }
 
     /*
-     * Get a pizza with specified type, size, thinCrust, and specInstruct
+     * Get a pizza with the default stats
      *
-     * @return "Pizza(type, size, thinCrust, specInstruct) was ran."
+     * @return "Pizza() was ran."
      */
-    public static void Pizza(PizzaType type, PizzaSize size, boolean thinCrust, String specInstruct) {
-        System.out.println("Pizza(type, size, thinCrust, specInstruct) was ran.");
+    public QPizza() {
+        this(PizzaType.Pepperoni, PizzaSize.Large, false, "");
     }
 
     /*
