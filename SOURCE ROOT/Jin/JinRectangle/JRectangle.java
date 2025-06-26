@@ -1,4 +1,4 @@
-package Jin.Jin_Rectangle;
+package Jin.JinRectangle;
 
 import javax.swing.*;
 import java.awt.*;
