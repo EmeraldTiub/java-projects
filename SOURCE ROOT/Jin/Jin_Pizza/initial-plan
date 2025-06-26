@@ -1,0 +1,6 @@
+1. Create a Pizza class
+2. Set the default values for a pizza (large, pepperoni, hand-tossed crust.)
+4. Make the mutator functions (sets the size, type, instructions, and crust type)
+5. Make the accessors (gets the size, type, instructions, and crust type.)
+6. Make the toString method (format: Ordering: [a/an] (size) (type) pizza)
+7. In the main function, use the mutators to change the pizza. Every change, print out pizza.toString().
