@@ -1,6 +1,7 @@
 package Jin.Jin_Pizza;
 
 public class Pizza {
+
     // Set up the type of the pizza.
     private enum PizzaType {
         PEPPERONI,
@@ -23,20 +24,9 @@ public class Pizza {
     private static String specInstruct = "";
 
     public Pizza() {}
-
-    // Set the variables in the Pizza class using this()
-    public Pizza(PizzaType type, PizzaSize size) {
-        this(type, size, false, "");
-    }
-
-    // Can't use this() because this has the most arguments
-    // (and this() uses it because it has the most arguments.)
-    public Pizza(PizzaType type, PizzaSize size, boolean thinCrust, String specInstruct) {
-        this.type = type;
-        this.size = size;
-        this.thinCrust = thinCrust;
-        this.specInstruct = specInstruct;
-    }
+    public Pizza(PizzaType type, PizzaSize size) {}
+    public Pizza(PizzaType type, PizzaSize size,
+                 boolean thinCrust, String specInstruct) {}
 
     /**
      * Change the type of the pizza.
