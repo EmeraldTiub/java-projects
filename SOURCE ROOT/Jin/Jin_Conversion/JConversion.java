@@ -109,22 +109,22 @@ public class JConversion {
             if (choice == 0) {
                 return;
             }
-            if (choice == 1) {
+            else if (choice == 1) {
                 System.out.printf("Converted: %.2f\n", FtoC(degrees));
             }
-            if (choice == 2) {
+            else if (choice == 2) {
                 System.out.printf("Converted: %.2f\n", FtoK(degrees));
             }
-            if (choice == 3) {
+            else if (choice == 3) {
                 System.out.printf("Converted: %.2f\n", CtoK(degrees));
             }
-            if (choice == 4) {
+            else if (choice == 4) {
                 System.out.printf("Converted: %.2f\n", CtoF(degrees));
             }
-            if (choice == 5) {
+            else if (choice == 5) {
                 System.out.printf("Converted: %.2f\n", KtoF(degrees));
             }
-            if (choice == 6) {
+            else if (choice == 6) {
                 System.out.printf("Converted: %.2f\n", KtoC(degrees));
             }
         }
