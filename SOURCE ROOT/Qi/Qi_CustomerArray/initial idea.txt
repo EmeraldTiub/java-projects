@@ -1,0 +1,8 @@
+1. use the Scanner read file
+    - have a for loop that does:
+        - reads the next line
+        - makes it into a customer object
+        - adds the object to an array
+    - loop n times (n is the first line in the csv file and displays the number of customers)
+
+2. "use the supplied Customer class" --> assume there's already a Customer class to convert data to object?

@@ -1,0 +1,6 @@
+[ Customer Array ]
+
+- Read data from a text file to create multiple Customer objects
+- Store those objects in an array
+- Use the supplied Customer class for which we have no source code
+- Use the debugger to do a "deep dive" into our data structures
