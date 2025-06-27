@@ -1,12 +1,12 @@
 package Jin.Jin_CustomerArray;
 
-public class Customer {
+public class JCustomer {
     private String firstName;
     private String lastName;
     private int age;
     private double balance;
     // Constructor for the Customer class.
-    public Customer(String firstName, String lastName, int age, double balance) {
+    public JCustomer(String firstName, String lastName, int age, double balance) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -79,5 +79,17 @@ public class Customer {
      */
     public void setBalance(int newBalance) {
         balance = newBalance;
+    }
+
+    /**
+     * Take the customer info and put it into a string that someone can understand.
+     * @return the string version of the customer.
+     */
+    public String toString() {
+        String res = "";
+        res += String.format("Full Name: %s %s\n", firstName, lastName);
+        res += "Age: " + age + "\n";
+        res += "Balance: $" + balance;
+        return res;
     }
 }

@@ -5,29 +5,41 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class JCustomerArray {
-    public static Customer[] readData(File file) throws FileNotFoundException {
+    /**
+     * Read in the customer data from CustomerData.csv
+     * @param file
+     * @return an array of Customer objects
+     * @throws FileNotFoundException
+     */
+    public static JCustomer[] readData(File file) throws FileNotFoundException {
         // Use the first line to create the result array.
         Scanner scanner = new Scanner(file);
-        int studentCount = Integer.parseInt(scanner.nextLine());
+        int customerCount = Integer.parseInt(scanner.nextLine());
 
         // Skip the line that says the format of the file
         scanner.nextLine();
 
         // Create the result array (initially empty)
-        Customer[] customers = new Customer[studentCount];
-        for (int i = 0; i < studentCount; i++) {
+        JCustomer[] customers = new JCustomer[customerCount];
+        for (int i = 0; i < customerCount; i++) {
             // Extract the data from each line.
             String[] data = scanner.nextLine().split(",");
 
             // Make the Customer object and add it to the result array.
-            Customer customer = new Customer(data[0], data[1], Integer.parseInt(data[2]), Double.parseDouble(data[3]));
+            JCustomer customer = new JCustomer(data[0], data[1], Integer.parseInt(data[2]), Double.parseDouble(data[3]));
             customers[i] = customer;
         }
+        scanner.close();
         return customers;
     }
+
+    /**
+     * Print out the info of each customer in CustomerData.csv
+     * @param args
+     */
     public static void main(String[] args) {
         File file = new File("C:\\Users\\jiny2\\IdeaProjects\\java-projects\\SOURCE ROOT\\Jin\\Jin_CustomerArray\\CustomerData.csv");
-        Customer[] customers = null;
+        JCustomer[] customers = null;
         try {
             customers = readData(file);
         } catch (FileNotFoundException e) {
@@ -39,9 +51,7 @@ public class JCustomerArray {
 
         // Print out each customer's info
         for (int i = 0; i < customers.length; i++) {
-            System.out.printf("Full Name: %s %s\n", customers[i].getFirstName(), customers[i].getLastName());
-            System.out.println("Age: " + customers[i].getAge());
-            System.out.println("Balance: $" + customers[i].getBalance());
+            System.out.println(customers[i].toString());
             System.out.println("-------------------------");
         }
     }

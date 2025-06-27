@@ -3,9 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/Jin_Java_Projects" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Qi_Java_Projects" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/payroll" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Jin-displayCustomerData" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Jin-payroll" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SOURCE ROOT" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
