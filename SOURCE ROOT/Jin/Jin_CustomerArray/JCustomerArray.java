@@ -5,6 +5,12 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class JCustomerArray {
+    /**
+     * Read in the customer data from CustomerData.csv
+     * @param file
+     * @return an array of Customer objects
+     * @throws FileNotFoundException
+     */
     public static JCustomer[] readData(File file) throws FileNotFoundException {
         // Use the first line to create the result array.
         Scanner scanner = new Scanner(file);
@@ -25,6 +31,11 @@ public class JCustomerArray {
         }
         return customers;
     }
+
+    /**
+     * Print out the info of each customer in CustomerData.csv
+     * @param args
+     */
     public static void main(String[] args) {
         File file = new File("C:\\Users\\jiny2\\IdeaProjects\\java-projects\\SOURCE ROOT\\Jin\\Jin_CustomerArray\\CustomerData.csv");
         JCustomer[] customers = null;
