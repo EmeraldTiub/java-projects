@@ -68,7 +68,7 @@ public class QPizza {
         if (type != getType()) System.out.println("getType() got " + getType() + " but the correct type was " + type + ".");
         if (size != getSize()) System.out.println("getSize() got " + getSize() + " but the correct size was " + size + ".");
         if (getThinCrust()) System.out.println("getThinCrust() got " + getThinCrust() + " but the correct result was false.");
-        if (getSpecInstruct().length() > 0) System.out.println("getSpecInstruct() got " + getSpecInstruct() + "but the correct result was an empty string.");
+        if (!getSpecInstruct().isEmpty()) System.out.println("getSpecInstruct() got " + getSpecInstruct() + "but the correct result was an empty string.");
         if (getArea(PizzaSize.Large) != 201.06193) System.out.println("getArea(PizzaSize.large) got " + getArea(PizzaSize.Large) + " but the correct result was 201.06193.");
 
         // test the modifiers
