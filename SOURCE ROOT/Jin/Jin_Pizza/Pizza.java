@@ -180,7 +180,7 @@ public class Pizza {
         }
 
         pizza.setCrust(false);
-        if (thinCrust != false) {
+        if (thinCrust) {
             System.out.println("Expected pizza size to be " + false + ", but pizza.thinCrust was " + thinCrust);
         }
 
