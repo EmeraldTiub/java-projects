@@ -33,19 +33,19 @@ public class QPizza {
         new QPizza();
 
         // See pizza stats
-        System.out.println(p.toString());
+        System.out.println(p.toString() + "\n");
 
         // Get type, size, thin crust truth value, special instructions, and area of pizza
-        getType();
-        getSize();
-        getThinCrust();
-        getSpecInstruct();
-        getArea(PizzaSize.Medium);
+        System.out.println(getType());
+        System.out.println(getSize());
+        System.out.println(getThinCrust());
+        System.out.println(getSpecInstruct());
+        System.out.println(getArea(PizzaSize.Medium) + "\n");
 
-        setType(PizzaType.Cheese); // Set the type of the pizza to cheese
-        setSize(PizzaSize.Small); // Set the size of the pizza to small
-        setThinCrust(true); // Make thin crust true
-        setSpecInstruct("add pineapple"); // Add a special instruction to "add pineapple"
+        System.out.println(setType(PizzaType.Cheese)); // Set the type of the pizza to cheese
+        System.out.println(setSize(PizzaSize.Small)); // Set the size of the pizza to small
+        System.out.println(setThinCrust(true)); // Make thin crust true
+        System.out.println(setSpecInstruct("add pineapple") + "\n"); // Add a special instruction to "add pineapple"
 
         System.out.println(p.toString()); // See the updated pizza stats
     }
@@ -85,9 +85,9 @@ public class QPizza {
      *
      * @return A string stating which type the pizza was changed to
      */
-    public static void setType(PizzaType setType) {
+    public static String setType(PizzaType setType) {
         type = setType;
-        System.out.println("type was changed to " + setType);
+        return "type was changed to " + setType;
     }
 
     /*
@@ -95,9 +95,9 @@ public class QPizza {
      *
      * @return A string stating which size the pizza was changed to
      */
-    public static void setSize(PizzaSize setSize) {
+    public static String setSize(PizzaSize setSize) {
         size = setSize;
-        System.out.println("size was changed to " + setSize);
+        return "size was changed to " + setSize;
     }
 
     /*
@@ -105,9 +105,9 @@ public class QPizza {
      *
      * @return A string stating which option (of having thinCrust or not) the pizza was changed to
      */
-    public static void setThinCrust(boolean setThinCrust) {
+    public static String setThinCrust(boolean setThinCrust) {
         thinCrust = setThinCrust;
-        System.out.println("thinCrust was changed to " + thinCrust);
+        return "thinCrust was changed to " + thinCrust;
     }
 
     /*
@@ -115,9 +115,9 @@ public class QPizza {
      *
      * @return A string stating which special instruction it was set to
      */
-    public static void setSpecInstruct(String setSpecInstruct) {
+    public static String setSpecInstruct(String setSpecInstruct) {
         specInstruct = setSpecInstruct;
-        System.out.println("specInstruct was changed to " + specInstruct);
+        return "specInstruct was changed to " + specInstruct;
     }
 
     /*
@@ -125,8 +125,8 @@ public class QPizza {
      *
      * @return A string stating the pizza type
      */
-    public static void getType() {
-        System.out.println("The type of the pizza is " + type);
+    public static String getType() {
+        return "The type of the pizza is " + type;
     }
 
     /*
@@ -134,8 +134,8 @@ public class QPizza {
      *
      * @return A string stating the pizza size
      */
-    public static void getSize() {
-        System.out.println("The size of the pizza is " + size);
+    public static String getSize() {
+        return "The size of the pizza is " + size;
     }
 
     /*
@@ -143,8 +143,8 @@ public class QPizza {
      *
      * @return A string stating whether or not thin-crust was chosen for the pizza
      */
-    public static void getThinCrust() {
-        System.out.println("You chose " + thinCrust + " for the thin-crust option.");
+    public static String getThinCrust() {
+        return "You chose " + thinCrust + " for the thin-crust option.";
     }
 
     /*
@@ -152,8 +152,8 @@ public class QPizza {
      *
      * @return A string stating the special instructions for the pizza
      */
-    public static void getSpecInstruct() {
-        System.out.println("Your special instruction was " + specInstruct);
+    public static String getSpecInstruct() {
+        return "Your special instruction was " + specInstruct;
     }
 
     /*
@@ -161,22 +161,14 @@ public class QPizza {
      *
      * @return A string stating the pizza area
      */
-    public static void getArea(PizzaSize size) {
-        if (size == PizzaSize.Small) {
-            System.out.println("The area of the pizza is " + (Math.PI * Math.pow(((double) 9 / 2), 2)));
-        }
+    public static String getArea(PizzaSize size) {
+        double area;
+        if       (size == PizzaSize.Small) area = Math.PI * Math.pow(4.5, 2);
+        else if (size == PizzaSize.Medium) area = Math.PI * Math.pow(6, 2);
+        else if (size == PizzaSize.Large)  area = Math.PI * Math.pow(8, 2);
+        else                               area = Math.PI * Math.pow(9, 2);
 
-        else if (size == PizzaSize.Medium) {
-            System.out.println("The area of the pizza is " + (Math.PI * Math.pow(((double) 12 / 2), 2)));
-        }
-
-        else if (size == PizzaSize.Large) {
-            System.out.println("The area of the pizza is " + (Math.PI * Math.pow(((double) 16 / 2), 2)));
-        }
-
-        else {
-            System.out.println("The area of the pizza is " + (Math.PI * Math.pow(((double) 18 / 2), 2)));
-        }
+        return "The area of the pizza is " + area;
     }
 
     /*
@@ -185,6 +177,11 @@ public class QPizza {
      * @return The details in a string format for clarity
      */
     public String toString() {
-        return "QPizza [type: " + type + ", size: " + size + ",  thinCrust: " + thinCrust + ", specInstruct: " + specInstruct + "]";
+        String representation = "";
+        representation += "Type: " + type + "\n";
+        representation += "Size: " + size + "\n";
+        representation += "Thin Crust: " + ((thinCrust) ? "Yes" : "No") + "\n";
+        representation += "Special Instructions: " + ((specInstruct.length() > 0) ? specInstruct : "No special instructions") + "\n";
+        return "---------------------------\n" + "[ Pizza Details ] \n" + representation + "---------------------------";
     }
 }
