@@ -59,7 +59,7 @@ public class QCustomerArray {
 
         // Loop through the customers array and display customer details
         for (int i = 0; i < customers.length; i++) {
-            System.out.println(customers[i].toString() + "\n");
+            System.out.println(customers[i] + "\n"); // toString() calls automatically
         }
     }
 }
