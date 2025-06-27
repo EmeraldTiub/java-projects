@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class JCustomerArray {
-    public static Customer[] readData(File file) throws FileNotFoundException {
+    public static JCustomer[] readData(File file) throws FileNotFoundException {
         // Use the first line to create the result array.
         Scanner scanner = new Scanner(file);
         int studentCount = Integer.parseInt(scanner.nextLine());
@@ -14,20 +14,20 @@ public class JCustomerArray {
         scanner.nextLine();
 
         // Create the result array (initially empty)
-        Customer[] customers = new Customer[studentCount];
+        JCustomer[] customers = new JCustomer[studentCount];
         for (int i = 0; i < studentCount; i++) {
             // Extract the data from each line.
             String[] data = scanner.nextLine().split(",");
 
             // Make the Customer object and add it to the result array.
-            Customer customer = new Customer(data[0], data[1], Integer.parseInt(data[2]), Double.parseDouble(data[3]));
+            JCustomer customer = new JCustomer(data[0], data[1], Integer.parseInt(data[2]), Double.parseDouble(data[3]));
             customers[i] = customer;
         }
         return customers;
     }
     public static void main(String[] args) {
         File file = new File("C:\\Users\\jiny2\\IdeaProjects\\java-projects\\SOURCE ROOT\\Jin\\Jin_CustomerArray\\CustomerData.csv");
-        Customer[] customers = null;
+        JCustomer[] customers = null;
         try {
             customers = readData(file);
         } catch (FileNotFoundException e) {

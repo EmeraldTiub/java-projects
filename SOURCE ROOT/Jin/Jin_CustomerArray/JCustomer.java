@@ -1,12 +1,12 @@
 package Jin.Jin_CustomerArray;
 
-public class Customer {
+public class JCustomer {
     private String firstName;
     private String lastName;
     private int age;
     private double balance;
     // Constructor for the Customer class.
-    public Customer(String firstName, String lastName, int age, double balance) {
+    public JCustomer(String firstName, String lastName, int age, double balance) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
