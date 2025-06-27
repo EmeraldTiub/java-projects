@@ -1,0 +1,20 @@
+1. Make a Customer class which has the following:
+    - Get methods
+        - getAge()
+        - getFirstName()
+        - getLastName()
+        - getBalance()
+    - Set methods
+        - setAge()
+        - setFirstName()
+        - setLastName()
+        - setBalance()
+    - Constructor
+        - age
+        - firstName
+        - lastName
+        - balance
+2. Use a Scanner to read in the data from the Customers.csv file
+3. Skip the first line (it's the format of each line)
+4. On each line, turn it into a Customer object.
+5. Add each Customer object into the result array.
