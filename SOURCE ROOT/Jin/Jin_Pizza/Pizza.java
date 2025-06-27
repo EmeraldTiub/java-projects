@@ -128,33 +128,21 @@ public class Pizza {
         // Turn the type into a string (for example, "cheese")
         String type = ("" + getType()).toLowerCase();
 
-        // Turn the size into a string (for example, "a large" or "an extra-large")
-        String size = "a " + ("" + getSize()).toLowerCase();
-        if (size.equals("a xl")) {
-            size = "an extra-large";
-        }
+        // Turn the size into a string (for example, "large" or "XL")
+        String size = ("" + getSize()).toLowerCase();
+        if (size == "xl") size = "XL";
 
-        // Turn the type of crust into a string (for example, "with thin crust")
-        String crustType = null;
-        if (thinCrust) {
-            crustType = "with thin crust";
-        }
-        else {
-            crustType = "with hand-tossed crust";
-        }
-
-        // Turn the special instructions into a string (for example, "Special instructions: Add mushrooms.")
-        String instructions = null;
-        if (specInstruct != "") {
-            instructions = "Special instructions: " + specInstruct;
-        }
-        else {
-            instructions = "No special instructions";
-        }
-
-        // Format the result. Example: "Ordering: Large pepperoni pizza with thin crust. No special instructions."
-        String res = "Ordering: %s %s pizza %s. %s";
-        return String.format(res, size, type, crustType, instructions);
+        // Format the result. Example:
+        // Type: pepperoni
+        // Size: medium
+        // Crust: hand-tossed
+        // Special instructions: none
+        String res = "Type: " + type + "\n";
+        res += "Size: " + size + "\n";
+        res += "Crust: " + ((thinCrust) ? "thin" : "hand-tossed") + "\n";
+        String crust = (!specInstruct.isEmpty()) ? specInstruct : "none";
+        res += "Special instructions: " + crust;
+        return res;
     }
 
     /**
@@ -165,21 +153,25 @@ public class Pizza {
         // Order a pizza and format it into a string.
         Pizza pizza = new Pizza();
         System.out.println(pizza.toString());
+        System.out.println("-------------------------------");
 
         // Change the size to extra-large and print out the new formatted string.
         setSize(PizzaSize.XL);
         System.out.println("Changed pizza size to Extra Large.");
         System.out.println(pizza.toString());
+        System.out.println("-------------------------------");
 
         // Change the type to cheese and print out the new formatted string.
         setType(PizzaType.CHEESE);
         System.out.println("Changed pizza type to Cheese.");
         System.out.println(pizza.toString());
+        System.out.println("-------------------------------");
 
         // Set the crust to thin crust and print out the new formatted string.
         setThinCrust(true);
         System.out.println("Changed crust to Thin Crust.");
         System.out.println(pizza.toString());
+        System.out.println("-------------------------------");
 
         // Give special instructions to add mushrooms and print out the new formatted string.
         setSpecInstruct("Add mushrooms.");
