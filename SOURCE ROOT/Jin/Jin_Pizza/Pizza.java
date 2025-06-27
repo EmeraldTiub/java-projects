@@ -58,7 +58,7 @@ public class Pizza {
      * Change the crust of the pizza.
      * @param hasThinCrust   The new crust of the pizza.
      */
-    public static void setThinCrust(boolean hasThinCrust) {
+    public static void setCrust(boolean hasThinCrust) {
         thinCrust = hasThinCrust;
     }
 
@@ -91,8 +91,12 @@ public class Pizza {
      * Tell the user what type of crust is on the pizza.
      * @return the type of crust.
      */
-    public static boolean getThinCrust() {
+    public static boolean hasThinCrust() {
         return thinCrust;
+    }
+
+    public static String getSpecInstruct() {
+        return specInstruct;
     }
 
     /**
@@ -150,32 +154,40 @@ public class Pizza {
      * @param args
      */
     public static void main(String[] args) {
-        // Order a pizza and format it into a string.
-        Pizza pizza = new Pizza();
-        System.out.println(pizza.toString());
-        System.out.println("-------------------------------");
+        // Order a pizza and test if everything is working.
+        Pizza pizza = new Pizza(PizzaType.VEGGIE, PizzaSize.MEDIUM, true, "Add mushrooms");
+        if (type != pizza.getType()) {
+            System.out.println("Expected pizza type to be " + type + ", but pizza.getType() gave" + pizza.getType());
+        }
+        if (size != pizza.getSize()) {
+            System.out.println("Expected pizza size to be " + size + ", but pizza.getSize() gave" + pizza.getSize());
+        }
+        if (thinCrust != pizza.hasThinCrust()) {
+            System.out.println("Expected thin crust to be " + thinCrust + " , but pizza.hasThinCrust() gave" + pizza.hasThinCrust());
+        }
+        if (pizza.getSpecInstruct() != specInstruct) {
+            System.out.println("Expected special instructions to be " + specInstruct + ", but pizza.getSpecInstruct gave" + pizza.getSpecInstruct());
+        }
 
-        // Change the size to extra-large and print out the new formatted string.
-        setSize(PizzaSize.XL);
-        System.out.println("Changed pizza size to Extra Large.");
-        System.out.println(pizza.toString());
-        System.out.println("-------------------------------");
+        pizza.setType(PizzaType.PEPPERONI);
+        if (type != PizzaType.PEPPERONI) {
+            System.out.println("Expected pizza type to be " + PizzaType.PEPPERONI + ", but pizza.type was " + type);
+        }
 
-        // Change the type to cheese and print out the new formatted string.
-        setType(PizzaType.CHEESE);
-        System.out.println("Changed pizza type to Cheese.");
-        System.out.println(pizza.toString());
-        System.out.println("-------------------------------");
+        pizza.setSize(PizzaSize.XL);
+        if (size != PizzaSize.XL) {
+            System.out.println("Expected pizza size to be " + PizzaSize.XL + ", but pizza.size was " + size);
+        }
 
-        // Set the crust to thin crust and print out the new formatted string.
-        setThinCrust(true);
-        System.out.println("Changed crust to Thin Crust.");
-        System.out.println(pizza.toString());
-        System.out.println("-------------------------------");
+        pizza.setCrust(false);
+        if (thinCrust != false) {
+            System.out.println("Expected pizza size to be " + false + ", but pizza.thinCrust was " + thinCrust);
+        }
 
-        // Give special instructions to add mushrooms and print out the new formatted string.
-        setSpecInstruct("Add mushrooms.");
-        System.out.println("Added special instructions.");
-        System.out.println(pizza.toString());
+        String instructions = "Add pineapples and mushrooms.";
+        pizza.setSpecInstruct(instructions);
+        if (specInstruct != instructions) {
+            System.out.println("Expected pizza size to be " + instructions + ", but pizza.specInstruct was " + specInstruct);
+        }
     }
 }
