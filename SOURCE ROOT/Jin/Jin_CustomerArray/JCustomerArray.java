@@ -29,6 +29,7 @@ public class JCustomerArray {
             JCustomer customer = new JCustomer(data[0], data[1], Integer.parseInt(data[2]), Double.parseDouble(data[3]));
             customers[i] = customer;
         }
+        scanner.close();
         return customers;
     }
 
