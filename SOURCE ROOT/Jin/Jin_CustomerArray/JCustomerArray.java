@@ -51,9 +51,7 @@ public class JCustomerArray {
 
         // Print out each customer's info
         for (int i = 0; i < customers.length; i++) {
-            System.out.printf("Full Name: %s %s\n", customers[i].getFirstName(), customers[i].getLastName());
-            System.out.println("Age: " + customers[i].getAge());
-            System.out.println("Balance: $" + customers[i].getBalance());
+            System.out.println(customers[i].toString());
             System.out.println("-------------------------");
         }
     }

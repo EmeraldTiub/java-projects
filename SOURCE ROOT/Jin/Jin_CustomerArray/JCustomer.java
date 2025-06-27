@@ -80,4 +80,16 @@ public class JCustomer {
     public void setBalance(int newBalance) {
         balance = newBalance;
     }
+
+    /**
+     * Take the customer info and put it into a string that someone can understand.
+     * @return the string version of the customer.
+     */
+    public String toString() {
+        String res = "";
+        res += String.format("Full Name: %s %s\n", firstName, lastName);
+        res += "Age: " + age + "\n";
+        res += "Balance: $" + balance;
+        return res;
+    }
 }
