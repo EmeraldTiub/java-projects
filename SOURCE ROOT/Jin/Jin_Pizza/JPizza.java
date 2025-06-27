@@ -1,6 +1,6 @@
 package Jin.Jin_Pizza;
 
-public class Pizza {
+public class JPizza {
     // Set up the type of the pizza.
     private enum PizzaType {
         PEPPERONI,
@@ -22,16 +22,16 @@ public class Pizza {
     private static boolean thinCrust = false;
     private static String specInstruct = "";
 
-    public Pizza() {}
+    public JPizza() {}
 
     // Set the variables in the Pizza class using this()
-    public Pizza(PizzaType type, PizzaSize size) {
+    public JPizza(PizzaType type, PizzaSize size) {
         this(type, size, false, "");
     }
 
     // Can't use this() because this has the most arguments
     // (and this() uses it because it has the most arguments.)
-    public Pizza(PizzaType type, PizzaSize size, boolean thinCrust, String specInstruct) {
+    public JPizza(PizzaType type, PizzaSize size, boolean thinCrust, String specInstruct) {
         this.type = type;
         this.size = size;
         this.thinCrust = thinCrust;
@@ -155,7 +155,7 @@ public class Pizza {
      */
     public static void main(String[] args) {
         // Order a pizza and test if everything is working.
-        Pizza pizza = new Pizza(PizzaType.VEGGIE, PizzaSize.MEDIUM, true, "Add mushrooms");
+        JPizza pizza = new JPizza(PizzaType.VEGGIE, PizzaSize.MEDIUM, true, "Add mushrooms");
         if (type != pizza.getType()) {
             System.out.println("Expected pizza type to be " + type + ", but pizza.getType() gave" + pizza.getType());
         }
