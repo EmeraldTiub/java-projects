@@ -14,14 +14,14 @@ public class JCustomerArray {
     public static JCustomer[] readData(File file) throws FileNotFoundException {
         // Use the first line to create the result array.
         Scanner scanner = new Scanner(file);
-        int studentCount = Integer.parseInt(scanner.nextLine());
+        int customerCount = Integer.parseInt(scanner.nextLine());
 
         // Skip the line that says the format of the file
         scanner.nextLine();
 
         // Create the result array (initially empty)
-        JCustomer[] customers = new JCustomer[studentCount];
-        for (int i = 0; i < studentCount; i++) {
+        JCustomer[] customers = new JCustomer[customerCount];
+        for (int i = 0; i < customerCount; i++) {
             // Extract the data from each line.
             String[] data = scanner.nextLine().split(",");
 
