@@ -1,7 +1,7 @@
 Demo: Hotel Suite Booking
 
 - We want a way to map out the whole year and know whether the
-  Happy Holiday Hotel's suit is booked on a given day of
+  Happy Holiday Hotel's suite is booked on a given day of
   the year, or whether it is available on that day
 - We'll use a two-dimensional array to solve the problem
 - Later we'll consider how we might extend the solution to cover all
