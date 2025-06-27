@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Main {
+public class JCustomerArray {
     public static Customer[] readData(File file) throws FileNotFoundException {
         // Use the first line to create the result array.
         Scanner scanner = new Scanner(file);
