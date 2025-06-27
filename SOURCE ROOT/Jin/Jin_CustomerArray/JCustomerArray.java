@@ -51,7 +51,7 @@ public class JCustomerArray {
 
         // Print out each customer's info
         for (int i = 0; i < customers.length; i++) {
-            System.out.println(customers[i].toString());
+            System.out.println(customers[i]);
             System.out.println("-------------------------");
         }
     }
