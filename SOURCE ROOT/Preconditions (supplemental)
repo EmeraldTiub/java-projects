@@ -1,0 +1,66 @@
+--------------------------------------
+*   When are preconditions needed?   *
+--------------------------------------
+    - In supplier class methods
+    - Where there are critical assumptions about parameter values (Example: The withdraw amount cannot be negative or exceed balance)
+    - Where there is no good way to communicate that data is bad (Example: A username parameter is null)
+    - Where callers have been told about the restrictions (Example: "Please do not make the denominator 0" then the user somehow makes it 0)
+    - Where callers can either...
+        - can easily know if their data is bad
+        - can easily find out if their data is bad
+
+------------------------------------
+*   How are preconditions coded?   *
+------------------------------------
+    - Preconditions throw exceptions
+    - Are usually at the top of the function or method
+        - [ Example ]
+          public static void divide(int numerator, int denominator) {
+              if (denominator < 0) {
+                  throw new ArithmeticException("Denominator value must be zero or greater.");
+              }
+          }
+    - No else cause; the exception will exit the function or method anyways
+
+-----------------------------------------
+*   How are preconditions documented?   *
+-----------------------------------------
+    - Use the JavaDoc tag, @throws
+    - (optional but suggested) acknowledge the error in the function definition
+    - [Example]
+      /*
+       * Finds the square root of a given number
+       *
+       * @param n The number that the function will be getting the square root of
+       * @throws  IllegalArgumentException
+       */
+      public static double sqrt(double n) throws IllegalArgumentException {
+          ...
+      }
+
+----------------------------------
+*   How to test preconditions?   *
+----------------------------------
+    - Use a try-catch
+    - Keep in mind that working preconditions should throw an error, not the opposite
+    - [Example]
+      try {
+          test.sqrt(-2);
+          System.out.println("[ FAILURE ] No exception was thrown.");
+      }
+      catch (IllegalArgumentException exception) {
+          System.out.println("[ SUCCESS ] An IllegalArgumentException was thrown.");
+      }
+
+----------------------------------------------
+*   When should preconditions NOT be used?   *
+----------------------------------------------
+    - When gathering input from users
+        - Or in response to user input
+        - The user can't handle it right there and then so just re-prompt until a valid input is put in
+    - Handle that error using...
+        - Data type checking
+            - Scanner look-ahead
+            - A try/catch around data type conversions
+        - Range checking
+    - A good example of this can be found in the Temperature Conversions demo
