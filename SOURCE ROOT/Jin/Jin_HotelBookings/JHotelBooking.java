@@ -52,11 +52,23 @@ public class JHotelBooking {
             }
         }
 
-        // Test the setStatus() function
+
+        // Set the out-of-range days to NA and everything else to OPEN
         RoomStatus[][][] rooms = new RoomStatus[12][31][roomCount];
-        rooms = setStatus(rooms, 1, 3, 6, RoomStatus.OPEN);
-        System.out.println(rooms[5][2][0]);
-        rooms = setStatus(rooms, 2, 3, 6, RoomStatus.BOOKED);
-        System.out.println(rooms[5][2][1]);
+        int[] dayCounts = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+        for (int m = 0; m < 12; m++) {
+            for (int d = 0; d < 31; d++) {
+                for (int r = 0; r < roomCount; r++) {
+                    if (d + 1 > dayCounts[m]) {
+                        rooms[m][d][r] = RoomStatus.NA;
+                    }
+                    else {
+                        rooms[m][d][r] = RoomStatus.OPEN;
+                    }
+                }
+            }
+        }
+
     }
 }
