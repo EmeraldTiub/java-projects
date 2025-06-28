@@ -6,7 +6,7 @@
 
 - We'll use a two-dimensional array to solve the problem
 
-- Later we'll consid er how we might extend the solution to cover all the rooms at the hotel, or even more hotels
+- Later we'll consider how we might extend the solution to cover all the rooms at the hotel, or even more hotels
 
 -----------------------------------------------------------------
 

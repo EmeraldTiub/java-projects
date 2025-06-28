@@ -13,8 +13,8 @@ public class QHotelRoomBooking {
      *
      * @return The empty array with dimensions: 12 by 31
      */
-    public static String[][] createArray() {
-        String[][] rooms = new String[12][31];
+    public static roomStatus[][] createArray() {
+        roomStatus[][] rooms = new roomStatus[12][31];
         return rooms;
     }
 
@@ -23,8 +23,8 @@ public class QHotelRoomBooking {
      *
      * @return The empty array with dimensions: 12 by 31 by roomCount
      */
-    public static String[][][] createArray(int roomCount) {
-        String[][][] rooms = new String[12][31][roomCount];
+    public static roomStatus[][][] createArray(int roomCount) {
+        roomStatus[][][] rooms = new roomStatus[12][31][roomCount];
         return rooms;
     }
 
