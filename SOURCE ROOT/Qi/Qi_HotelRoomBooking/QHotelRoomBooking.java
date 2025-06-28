@@ -11,13 +11,14 @@ public class QHotelRoomBooking {
     // Make the year variable global so no copies need to be made
     public static roomStatus[][] year;
 
-    /*
+    /**
      * Set a given day in a month for the room to be booked
      *
      * @param   month   A number representing a month
      * @param   day     A number representing a day
+     * @throws  ArrayIndexOutOfBoundsException
      */
-    public static void setBooked(int month, int day) {
+    public static void setBooked(int month, int day) throws ArrayIndexOutOfBoundsException {
         // Make a precondition where the user puts in an invalid month or day
         if (day < 1 || day > 31 || month < 1 || month > 12) {
             throw new ArrayIndexOutOfBoundsException("Please enter a valid month and day");
@@ -27,7 +28,7 @@ public class QHotelRoomBooking {
         year[month-1][day-1] = roomStatus.BOOKED;
     }
 
-    /*
+    /**
      * Print each day in the year
      *
      * @return Nothing.
@@ -42,10 +43,10 @@ public class QHotelRoomBooking {
         }
     }
 
-    /*
+    /**
      * Print results from each createArray() function
      *
-     * @param Command-line arguments, not used here.
+     * @param args Command-line arguments. Not used here.
      */
     public static void main(String[] args) {
         year = new roomStatus[12][31]; // Assign the global year variable to be a two-dimensional array of the year
