@@ -49,11 +49,16 @@ public class QHotelRoomBooking {
      */
     public static void main(String[] args) {
         year = new roomStatus[12][31]; // Assign the global year variable to be a two-dimensional array of the year
-
+        int[] monthDays = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         // Set the room status to be open every day as default
         for (int i = 0; i < year.length; i++) {
             for (int j = 0; j < year[i].length; j++) {
-                year[i][j] = roomStatus.OPEN;
+                if (j > monthDays[i]) {
+                    year[i][j] = roomStatus.NA; // If there aren't 31 days in the current month, make that day not applicable (NA)
+                }
+                else {
+                    year[i][j] = roomStatus.OPEN;
+                }
             }
         }
 
