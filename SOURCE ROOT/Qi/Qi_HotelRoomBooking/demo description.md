@@ -20,4 +20,4 @@
     - For the moment, assume all the months have 31 days
 - For each day, use an enum with "booked", "open", and "na" (not applicable, to account for the months without 31 days)
 
-![img.png](img.png)
+![img_1.png](img_1.png)
