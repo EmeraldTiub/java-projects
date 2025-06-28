@@ -8,24 +8,38 @@ public class QHotelRoomBooking {
         NA
     }
 
+    // Make the year variable global so no copies need to be made
+    public static roomStatus[][] year;
+
     /*
-     * Make an array with 12 rows for the months and 31 columns for the days
+     * Set a given day in a month for the room to be booked
      *
-     * @return The empty array with dimensions: 12 by 31
+     * @param   month   A number representing a month
+     * @param   day     A number representing a day
      */
-    public static roomStatus[][] createArray() {
-        roomStatus[][] rooms = new roomStatus[12][31];
-        return rooms;
+    public static void setBooked(int month, int day) {
+        // Make a precondition where the user puts in an invalid month or day
+        if (day < 1 || day > 31 || month < 1 || month > 12) {
+            throw new ArrayIndexOutOfBoundsException("Please enter a valid month and day");
+        }
+
+        // Set the month and day to be booked using the enum
+        year[month-1][day-1] = roomStatus.BOOKED;
     }
 
     /*
-     * Make an array of the month with another dimension for each room in the hotel
+     * Print each day in the year
      *
-     * @return The empty array with dimensions: 12 by 31 by roomCount
+     * @return Nothing.
      */
-    public static roomStatus[][][] createArray(int roomCount) {
-        roomStatus[][][] rooms = new roomStatus[12][31][roomCount];
-        return rooms;
+    public static void printItems() {
+        // Loop through every item
+        for (int i = 0; i < 12; i++) {
+            for (int j = 0; j < 31; j++) {
+                System.out.println("Day " + (j+1) + ": " + year[i][j]); // Print the status and the day
+            }
+            System.out.println("End of month " + (i+1) + ". \n"); // Print an end-of-month message
+        }
     }
 
     /*
@@ -34,7 +48,20 @@ public class QHotelRoomBooking {
      * @param Command-line arguments, not used here.
      */
     public static void main(String[] args) {
-        System.out.println(createArray());
-        System.out.println(createArray(20));
+        year = new roomStatus[12][31]; // Assign the global year variable to be a two-dimensional array of the year
+
+        // Set the room status to be open every day as default
+        for (int i = 0; i < year.length; i++) {
+            for (int j = 0; j < year[i].length; j++) {
+                year[i][j] = roomStatus.OPEN;
+            }
+        }
+
+        printItems(); // Print every item to see the status of the room on every day
+        System.out.println("\n");
+
+        setBooked(1, 1); // Set the room to be booked on January 1
+
+        printItems(); // Check every item again
     }
 }
