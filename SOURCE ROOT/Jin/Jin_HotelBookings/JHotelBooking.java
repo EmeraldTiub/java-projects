@@ -70,7 +70,5 @@ public class JHotelBooking {
             }
         }
 
-        System.out.println(rooms[1][30]);
-//        rooms = setStatus(rooms, )
     }
 }
