@@ -1,3 +1,13 @@
 1. Make a two-dimensional array where the x-value is the month (0-indexed)
    and the y-value is the day (0-indexed)
-2.
+2. Make an enum called SuiteStatus
+3. For each month, set each day out of the range to SuiteStatus.NA
+
+
+[EXTENDED]
+
+4. Ask the user for the room count of Happy Holiday Hotel.
+5. In each cell of the two-dimensional array,
+   have an array of length roomCount where each index is a room.
+6. In each of those arrays, each index should store the status
+   of that room (example: [booked, booked, open, booked, etc.])
