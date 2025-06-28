@@ -25,8 +25,8 @@
 -----------------------------------------
 *   How are preconditions documented?   *
 -----------------------------------------
-    - Use the JavaDoc tag, @throws
-    - (optional but suggested) acknowledge the error in the function definition
+    - Use the JavaDoc tag, @throws (Definitely have this even if the JavaDoc doesn't automatically put @throws there)
+    - Acknowledge the error in the function definition by adding a "throws Exception" after defining the function
     - [Example]
       /*
        * Finds the square root of a given number
