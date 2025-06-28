@@ -1,0 +1,8 @@
+- Use a two-dimensional array, like suggested in the problem
+    - Row number would be 12
+    - Column number would be 31
+- Create an enum called roomStatus or something and have 3 possible room statuses, BOOKED, OPEN, or NA
+
+[Extended part]
+- Make each cell have another array, this one for each hotel room
+    - At index i, hotel i would be BOOKED, OPEN, or NA depending on the value at index i.
