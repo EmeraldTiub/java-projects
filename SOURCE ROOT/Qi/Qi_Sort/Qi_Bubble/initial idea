@@ -3,9 +3,11 @@
 - The maximum amount of times I'll need to loop through nums (the given array) is the length.
     - Use a for loop
     - Loops nums.length times
+
 - I need to check each pair so use another for loop that loops through nums but not the last item.
     - "...not the last item" because it can't pair with anything after it
     - And it wouldn't make sense to pair it with its previous item because that was already checked before
+
 - If item at i is bigger than item at i+1, swap:
     - Set a temporary value that is equal to item at i+1
     - Set nums[i+1] to item i
@@ -15,3 +17,19 @@
 
 ---------------------------
 [Optimization part]
+
+- Optimization #1: If we do a pass and make no swaps...
+    - A boolean variable that is true when a swap is done and false otherwise
+    - Set the variable to false on default
+    - When 2 items are swapped, change it to true
+
+- Optimization #2: Go only through the unsorted portion...
+    - Keep an int variable that stores the start of the sorted portion
+    - At the end of every pass, decrease this variable.
+
+- Optimization #3: If no further swaps after a swap...
+    - Observation: Optimization #3 is more "optimizing" than Optimization #2. It covers Optimization #2 AND, in some cases, covers even more sorted portion.
+    - Keep track of the most recent swap.
+        - Have a variable that stores the most recent swap.
+        - Every swap, update this variable to be i + 1
+        - At the end of the swap, set the start-of-sorted-portion variable to be equal to the most-recent-swap variable.
