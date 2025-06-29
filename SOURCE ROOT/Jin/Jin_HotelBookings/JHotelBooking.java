@@ -28,7 +28,40 @@ public class JHotelBooking {
     }
 
     /**
+     * Sets the room statuses for the entire year based on the given year.
+     * Sets days outside the range for each month to RoomStatus.NA
+     * and the rest to RoomStatus.OPEN.
+     *
+     * @param year
+     */
+    public static void setNA(int year) {
+        // Set the count of days in each month (handles the case with leap years)
+        int[] dayCounts = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        if (year % 4 == 0) {
+            dayCounts[1] += 1;
+        }
+
+        // Set the statuses.
+        for (int m = 0; m < 12; m++) {
+            for (int d = 0; d < 31; d++) {
+                for (int r = 0; r < rooms[m][d].length; r++) {
+                    if (d + 1 > dayCounts[m]) {
+                        rooms[m][d][r] = RoomStatus.NA;
+                    }
+                    else {
+                        rooms[m][d][r] = RoomStatus.OPEN;
+                    }
+                }
+            }
+        }
+    }
+
+    public static RoomStatus getStatus(int roomNumber, int day, int month) {
+        return rooms[month - 1][day - 1][roomNumber - 1];
+    }
+    /**
      * Ask the user for the amount of rooms in Happy Holiday Hotel.
+     * Then create the rooms array.
      * @param args
      */
     public static void main(String[] args) {
@@ -50,22 +83,10 @@ public class JHotelBooking {
             }
         }
 
-
-        // Set the out-of-range days to NA and everything else to OPEN
-        int[] dayCounts = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
-        for (int m = 0; m < 12; m++) {
-            for (int d = 0; d < 31; d++) {
-                for (int r = 0; r < roomCount; r++) {
-                    if (d + 1 > dayCounts[m]) {
-                        rooms[m][d][r] = RoomStatus.NA;
-                    }
-                    else {
-                        rooms[m][d][r] = RoomStatus.OPEN;
-                    }
-                }
-            }
-        }
+        // Test the function that sets the invalid days to NA
+        rooms = new RoomStatus[12][31][roomCount];
+        setNA(4);
+        System.out.println(getStatus(1, 30, 2));
 
     }
 }
