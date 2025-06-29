@@ -1,0 +1,7 @@
+- Once again, maximum number of passes will be the length of nums (given array)
+- Keep an int variable that stores the index where the next smallest item should go (call this moveTo)
+- Loop through, find the minimum element
+    - Also keep another variable that stores the index of the minimum value (call this minIdx)
+    - If there's a number that's smaller than that variable
+        - Reassign minIdx to the current index
+- Swap the two items at minIdx and moveTo (unless the minimum element is already in place)

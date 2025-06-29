@@ -1,0 +1,10 @@
+[Selection Sort]
+
+-  Sort an array by selecting the smallest number and placing it in its appropriate place
+- [ Example ]
+    - [6, 3, 5, 2, 4]
+    - Select 2. This is the first smallest number.
+    - Move 2 to the first position. (swap 6 and 2)
+    - Select 3. This is the second smallest number.
+    - Move 3 to the second position. (already there so don't need to do anything)
+    - And so on.
