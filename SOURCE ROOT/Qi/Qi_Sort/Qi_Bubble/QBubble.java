@@ -8,12 +8,12 @@ public class QBubble {
      * @return  The sorted version of nums
      */
     public static int[] bubbleSort(int[] nums) {
-        int sortedIdx = nums.length - 1; // Optimization #2
+        int sortedIdx = nums.length - 1; // Optimization #3
 
         for (int i : nums) { // The maximum number of passes is the length of nums
 
             boolean hasSwapped = false; // Optimization #1
-
+            int recentSwap = sortedIdx;
             // Go through everything except for the last item (more explanation in "initial idea")
             for (int j = 0; j < sortedIdx; j++) {
 
@@ -25,7 +25,9 @@ public class QBubble {
                     nums[j+1] = nums[j];
                     nums[j] = temp;
 
-                    hasSwapped = true;
+                    recentSwap = j+1; // Optimization #3
+
+                    hasSwapped = true; // Optimization #1
                 }
             }
 
@@ -34,7 +36,7 @@ public class QBubble {
                 break;
             }
 
-            sortedIdx--; // Optimization #2
+            sortedIdx = recentSwap; // Optimization #3
         }
         return nums;
     }
