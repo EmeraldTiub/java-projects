@@ -1,0 +1,15 @@
+Bubble Sort: "Biggest Bubbles to Top"
+
+- Check each pair (i, i + 1) of elements in the array.
+    - If the pair is unsorted, swap those elements.
+    - If the pair is sorted, continue on.
+- When you reach the end, go back to the start and check each pair again.
+- Keep doing this until no elements are swapped after a pass.
+
+Bubble Sort: Optimizations
+
+- If we do a pass and make no swaps, we're completely done.
+- We don't need to go all the way to the end each time, only
+  through the unsorted portion.
+- If we do no further swaps after swapping i and i + 1, the
+  portion starting at i + 1 is sorted

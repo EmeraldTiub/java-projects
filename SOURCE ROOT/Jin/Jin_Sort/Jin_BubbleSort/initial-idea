@@ -1,0 +1,8 @@
+1. Pass in an unsorted array.
+2. Keep track of
+2. Loop through each index EXCEPT the last index.
+    1. Compare arr[i] with arr[i + 1].
+    2. If arr[i] is bigger than arr[i + 1],
+       then swap the elements.
+3. Repeat step 2 n times where n is the length
+   of arr.
