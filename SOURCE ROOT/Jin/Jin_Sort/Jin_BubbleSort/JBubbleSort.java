@@ -6,7 +6,7 @@ public class JBubbleSort {
      * @param arr the array of integers to be sorted
      * @return the sorted array of integers
      */
-    public static int[] bubbleSort(int[] arr) {
+    public static void bubbleSort(int[] arr) {
         // Create the variables
         int sortedPortion = arr.length - 1;
         Integer latestSwap = null;
@@ -32,7 +32,6 @@ public class JBubbleSort {
             sortedPortion = latestSwap;
             latestSwap = null;
         }
-        return arr;
     }
 
     /**
