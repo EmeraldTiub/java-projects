@@ -1,0 +1,14 @@
+[Bubble Sort]
+
+- The basic idea is: biggest bubbles to top
+- In each loop through the array (these are called passes), swap items that are not in order.
+- At the end of the first pass, the biggest item will be at the end of the array.
+- At the end of the second pass, the 2nd biggest item will be at the end of the array.
+- And so on....
+
+------------------------------
+[Optimization]
+
+- If there's a pass with no swaps, the array is sorted.
+- Only go through the unsorted portion of the array, no need to re-sort sorted parts.
+- If, after i and i+1 are swapped, no further swaps happen, the part starting from i is sorted.
