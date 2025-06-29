@@ -1,0 +1,17 @@
+[Original part]
+
+- The maximum amount of times I'll need to loop through nums (the given array) is the length.
+    - Use a for loop
+    - Loops nums.length times
+- I need to check each pair so use another for loop that loops through nums but not the last item.
+    - "...not the last item" because it can't pair with anything after it
+    - And it wouldn't make sense to pair it with its previous item because that was already checked before
+- If item at i is bigger than item at i+1, swap:
+    - Set a temporary value that is equal to item at i+1
+    - Set nums[i+1] to item i
+    - Set nums[i] to the temporary variable holding item i+1
+    - Must use temporary variable because item i+1 changes to item i so later,
+      if nums[i] was just set to nums[i+1], both items would be nums[i]
+
+---------------------------
+[Optimization part]
