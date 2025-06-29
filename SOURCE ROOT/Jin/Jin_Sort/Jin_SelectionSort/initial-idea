@@ -1,0 +1,6 @@
+1. Loop through the array with index i.
+2. For each index, find the minimum element to the right of it.
+    - Keep track of the index of the minimum element. (call it minIdx)
+    - Compare each of the elements with arr[minIdx].
+    - If the recorded minimum is bigger, update currMin.
+3. Switch that element with the element at index i.
