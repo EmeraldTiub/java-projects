@@ -1,0 +1,7 @@
+Selection Sort: "Smallest Swapped to Here"
+
+- Keep track of the index where everything before it is sorted.
+- Find the minimum element starting from that index.
+- Switch those two elements.
+- Update the index.
+- Repeat until the array is sorted.
