@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class JHotelBooking {
 
+    public static RoomStatus[][][] rooms;
+
     // Make the statuses for the suite.
     private enum RoomStatus {
         BOOKED,
@@ -12,25 +14,21 @@ public class JHotelBooking {
     }
 
     /**
-     *
-     * @param calendar The calendar of the hotel (what status is each room every day)
-     * @param room The room which status is changed.
+     * Changes the status of a room at a certain day.
+     * @param roomNumber The number of the room which status is changed.
      * @param day The day when the room was booked.
      * @param month The month when the room was booked.
      * @param status The new status of the room.
      */
-    public static RoomStatus[][][] setStatus(RoomStatus[][][] calendar, int room, int day, int month, RoomStatus status) {
+    public static void setStatus(int roomNumber, int day, int month, RoomStatus status) {
         if (day < 1 || day > 31 || month < 1 || month > 12) {
             throw new IllegalArgumentException("Invalid day/month.");
         }
-        calendar[month - 1][day - 1][room - 1] = status;
-        return calendar;
+        rooms[month - 1][day - 1][roomNumber - 1] = status;
     }
 
     /**
      * Ask the user for the amount of rooms in Happy Holiday Hotel.
-     * Then create a 12 by 31 by roomCount array to track all the
-     * room statuses on each day of the year.
      * @param args
      */
     public static void main(String[] args) {
@@ -54,7 +52,6 @@ public class JHotelBooking {
 
 
         // Set the out-of-range days to NA and everything else to OPEN
-        RoomStatus[][][] rooms = new RoomStatus[12][31][roomCount];
         int[] dayCounts = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
         for (int m = 0; m < 12; m++) {
