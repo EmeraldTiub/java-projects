@@ -19,6 +19,12 @@ public class JInsertionSort {
             }
         }
     }
+
+    /**
+     * Tests the insertionSort() method.
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         int[] arr = {5, 2, 6, 8, 7, 3, 9, 1, 10, 4};
         insertionSort(arr);
