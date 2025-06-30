@@ -1,0 +1,4 @@
+[ People ]
+    [ Structure ]
+        - Make 3 classes, Student, Teacher, and Person
+        - Add an "extends Person" to the end of the Student and Teacher classes
