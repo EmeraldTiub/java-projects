@@ -1,0 +1,4 @@
+Insertion Sort: "Each Swapped until Placed"
+
+- For each element, keep swapping it with
+  the element to the left of it until it's bigger.
