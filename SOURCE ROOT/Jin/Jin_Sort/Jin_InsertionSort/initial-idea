@@ -1,0 +1,4 @@
+Insertion Sort
+
+1. Loop through the elements starting from index 1
+2. Keep swapping that element with the one to the left of it until it's bigger.
