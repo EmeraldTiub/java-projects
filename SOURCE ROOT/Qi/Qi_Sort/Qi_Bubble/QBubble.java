@@ -5,9 +5,8 @@ public class QBubble {
      * Sort a given array, nums, using bubble sort
      *
      * @param   nums   An unsorted array of numbers
-     * @return  The sorted version of nums
      */
-    public static int[] bubbleSort(int[] nums) {
+    public static void bubbleSort(int[] nums) {
         int sortedIdx = nums.length - 1; // Optimization #3
 
         for (int i : nums) { // The maximum number of passes is the length of nums
@@ -38,7 +37,6 @@ public class QBubble {
 
             sortedIdx = recentSwap; // Optimization #3
         }
-        return nums;
     }
 
     /**
@@ -48,10 +46,11 @@ public class QBubble {
      */
     public static void main(String[] args) {
         // Use bubble sort to sort [5, 2, 6, 1, 4]
-        int[] sorted = bubbleSort(new int[]{5, 2, 6, 1, 4});
+        int[] nums = new int[]{5, 2, 6, 1, 4};
+        bubbleSort(nums);
 
         // Print out each separate item
-        for (int i : sorted) {
+        for (int i : nums) {
             System.out.println(i);
         }
     }

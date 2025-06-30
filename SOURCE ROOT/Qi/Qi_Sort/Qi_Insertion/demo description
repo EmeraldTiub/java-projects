@@ -1,0 +1,5 @@
+[ Insertion Sort ]
+
+Keep track of the sorted portion.
+For each element, keep swapping it with
+  the element to the left of it until it's bigger.
