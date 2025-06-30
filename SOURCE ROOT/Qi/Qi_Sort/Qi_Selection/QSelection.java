@@ -1,13 +1,12 @@
 package Qi.Qi_Sort.Qi_Selection;
 
-public class Selection {
+public class QSelection {
     /**
      * Sort a given array, nums, using selection sort
      *
      * @param   nums   An unsorted array of numbers
-     * @return  nums   The sorted version of nums
      */
-    public static int[] selectionSort(int[] nums) {
+    public static void selectionSort(int[] nums) {
         // Maximum # of passes: nums.length. i is also used for the moveTo variable
         for (int i = 0; i < nums.length; i++) {
             // Set up the variable that stores the index of the minimum element in the unsorted portion
@@ -27,9 +26,6 @@ public class Selection {
                 nums[i] = temp;
             }
         }
-
-        // Return the sorted nums
-        return nums;
     }
 
     /**
@@ -42,10 +38,10 @@ public class Selection {
         int[] nums = new int[]{3, 2, 4, 1, 5, 6, 7, 8, 9};
 
         // Use selection sort to sort it
-        int[] sortedNums = selectionSort(nums);
+        selectionSort(nums);
 
         // Loop through the sorted version and check each item
-        for (int i : sortedNums) {
+        for (int i : nums) {
             System.out.println(i);
         }
     }
