@@ -1,10 +1,5 @@
 package Jin.Jin_College;
 
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 class JPerson {
     // Create the info for the person.
     public static String id;
@@ -158,8 +153,9 @@ class JPerson {
 
 class JStudent extends JPerson {
     // Create the course info.
-    public static List<String> courseNames;
-    public static List<Double> courseGrades;
+    public static String[] courseNames = new String[30];
+    public static double[] courseGrades = new double[30];
+    public static int courseIdx;
 
     /**
      * Constructs a new JStudent object with the specified course names, course
@@ -173,13 +169,17 @@ class JStudent extends JPerson {
      * @param lastName the last name of the student
      * @throws IllegalArgumentException if the size of courseNames does not match the size of courseGrades
      */
-    public JStudent(List<String> courseNames, List<Double> courseGrades, String id, String email, String firstName, String lastName) {
+    public JStudent(String[] courseNames, double[] courseGrades, String id, String email, String firstName, String lastName) {
         super(id, email, firstName, lastName);
-        if (courseNames.size() != courseGrades.size()) {
+        if (courseNames.length != courseGrades.length) {
             throw new IllegalArgumentException("The array courseGrades must be the same length as courseNames.");
         }
-        this.courseNames = courseNames;
-        this.courseGrades = courseGrades;
+        if (courseNames.length > 60) {
+            throw new IllegalArgumentException("The amount of courses taken cannot be bigger than 30.");
+        }
+        for (int i = 0; i < courseNames.length; i++) this.courseNames[i] = courseNames[i];
+        for (int i = 0; i < courseGrades.length; i++) this.courseGrades[i] = courseGrades[i];
+        this.courseIdx = courseNames.length;
     }
 
     /**
@@ -190,13 +190,9 @@ class JStudent extends JPerson {
      * @param courseGrade the grade associated with the course to be added
      */
     public static void addCourse(String courseName, double courseGrade) {
-        if (courseNames.size() == 30) {
-            System.out.println("Sorry, the student cannot have more than 30 courses taken.");
-            return;
-        }
-        courseNames.add(courseName);
-        courseGrades.add(courseGrade);
-        System.out.println("Successfully added " + courseName + " with a grade of " + courseGrade);
+        courseNames[courseIdx] = courseName;
+        courseGrades[courseIdx] = courseGrade;
+        courseIdx++;
     }
 
     /**
@@ -206,8 +202,8 @@ class JStudent extends JPerson {
      */
     public String getCourses() {
         String res = "Courses taken: ";
-        for (int i = 0; i < courseNames.size(); i++) {
-            res += courseNames.get(i) + " | ";
+        for (int i = 0; i < courseNames.length; i++) {
+            res += courseNames[i] + " | ";
         }
         return res;
     }
@@ -219,8 +215,8 @@ class JStudent extends JPerson {
      */
     public String getGrades() {
         String res = "Grades: ";
-        for (int i = 0; i < courseGrades.size(); i++) {
-            res += courseGrades.get(i) + " | ";
+        for (int i = 0; i < courseGrades.length; i++) {
+            res += courseGrades[i] + " | ";
         }
         return res;
     }
@@ -232,19 +228,27 @@ class JStudent extends JPerson {
      * @return a string representation of the student's details
      */
     public String toString() {
-        String res = "Course Name | Course Grade\n";
-        res += "————————————|—————————————\n";
-        for (int i = 0; i < courseNames.size(); i++) {
+        String res = "+————————————————————————————+\n| Course Name | Course Grade |\n";
+        res += "|—————————————|——————————————|\n";
+        for (int i = 0; i < courseNames.length; i++) {
+            if (courseNames[i] == null) break;
             // Formatting for the string.
             String spaces = "";
-            int spacesNeeded = 13 - courseNames.get(i).length();
+            int spacesNeeded = 13 - courseNames[i].length();
             for (int j = 0; j < spacesNeeded - 1; j++) {
                 spaces += " ";
             }
             // Add the course to the string.
-            res += courseNames.get(i) + spaces + "|";
-            res += " " + courseGrades.get(i) + "\n";
+            res += "| " + courseNames[i] + spaces + "|";
+
+            spaces = "";
+            spacesNeeded = 13 - ("" + courseGrades[i]).length();
+            for (int j = 0; j < spacesNeeded - 1; j++) {
+                spaces += " ";
+            }
+            res += " " + courseGrades[i] + "%" + spaces + "|\n";
         }
+        res += "+————————————————————————————+";
         return res;
     }
 
@@ -255,10 +259,10 @@ class JStudent extends JPerson {
      */
     public double gradeAvg() {
         double gradeSum = 0.0;
-        for (int i = 0; i < courseGrades.size(); i++) {
-            gradeSum += courseGrades.get(i);
+        for (int i = 0; i < courseGrades.length; i++) {
+            gradeSum += courseGrades[i];
         }
-        return gradeSum / courseGrades.size();
+        return gradeSum / courseGrades.length;
     }
 
     /**
@@ -270,10 +274,8 @@ class JStudent extends JPerson {
      * @param args command-line arguments
      */
     public static void main(String[] args) {
-        List<String> courseNames = new ArrayList<>();
-        Collections.addAll(courseNames, "PHYS& 121", "ITAL& 121", "CSC 143", "CHEM 256", "ENGL& 235");
-        List<Double> courseGrades = new ArrayList<>();
-        Collections.addAll(courseGrades, 100.0, 98.4, 99.6, 98.2, 97.8);
+        String[] courseNames = {"PHYS& 121", "ITAL& 121", "CSC 143", "CHEM 256", "ENGL& 235"};
+        double[] courseGrades = {100.0, 98.4, 99.6, 98.2, 97.8};
         JStudent student = new JStudent(
                 courseNames,
                 courseGrades,
@@ -282,8 +284,8 @@ class JStudent extends JPerson {
                 "Yunjin",
                 "Li");
         System.out.println(student);
-        System.out.println("————————————————————————");
-        student.addCourse("NUTR& 101", 0.0);
+        student.addCourse("NUTR& 101", 98.0);
+        System.out.println("Added NUTR& 101 course with grade of 98.0%");
         System.out.println(student);
     }
 }
@@ -294,7 +296,8 @@ class JTeacher extends JPerson {
     public static String firstName;
     public static String lastName;
     public static String email;
-    public static List<String> coursesTaught;
+    public static String[] coursesTaught;
+    public static int courseIdx;
 
     /**
      * Constructs a new JTeacher object with the specified ID, first name, courses taught,
@@ -307,7 +310,7 @@ class JTeacher extends JPerson {
      * @param lastName the last name of the teacher
      * @param email the email address of the teacher
      */
-    public JTeacher(String id, String firstName, String lastName, List<String> coursesTaught, String email) {
+    public JTeacher(String id, String firstName, String lastName, String[] coursesTaught, String email) {
         super(id, firstName, lastName, email);
         this.id = id;
         this.firstName = firstName;
@@ -323,8 +326,8 @@ class JTeacher extends JPerson {
      */
     public String getClasses() {
         String res = "Courses taught: ";
-        for (int i = 0; i < coursesTaught.size(); i++) {
-            res += coursesTaught.get(i) + " | ";
+        for (int i = 0; i < coursesTaught.length; i++) {
+            res += coursesTaught[i] + " | ";
         }
         return res;
     }
@@ -338,15 +341,15 @@ class JTeacher extends JPerson {
     public String toString() {
         String res = "+—————————————+\n| Course Name |\n";
         res += "|—————————————|\n";
-        for (int i = 0; i < coursesTaught.size(); i++) {
+        for (int i = 0; i < coursesTaught.length; i++) {
             // Formatting for the string.
             String spaces = "";
-            int spacesNeeded = 12 - coursesTaught.get(i).length();
+            int spacesNeeded = 12 - coursesTaught[i].length();
             for (int j = 0; j < spacesNeeded - 1; j++) {
                 spaces += " ";
             }
             // Add the course to the string.
-            res += "| " + coursesTaught.get(i) + spaces + " |\n";
+            res += "| " + coursesTaught[i] + spaces + " |\n";
         }
         res += "+—————————————+";
         return res;
@@ -360,12 +363,8 @@ class JTeacher extends JPerson {
      * @param course the name of the course to be added
      */
     public static void addCourse(String course) {
-        if (coursesTaught.size() == 4) {
-            System.out.println("Sorry, the teacher cannot teach more than 4 courses per term.");
-            return;
-        }
-        coursesTaught.add(course);
-        System.out.println("Course added succesfully.");
+        coursesTaught[courseIdx] = course;
+        courseIdx += 1;
     }
     /**
      * The main method serves as the entry point of the program. It initializes a
@@ -376,8 +375,7 @@ class JTeacher extends JPerson {
      * @param args command-line arguments
      */
     public static void main(String[] args) {
-        List<String> coursesTaught = new ArrayList<>();
-        Collections.addAll(coursesTaught, "CSC 110", "CSC 142", "CSC 143");
+        String[] coursesTaught = {"CSC 110", "CSC 142", "CSC 143"};
         JTeacher teacher = new JTeacher("A1B2C3", "Bill", "Barry", coursesTaught, "William.Barry@seattlecolleges.edu");
         System.out.println(teacher);
     }
