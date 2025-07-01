@@ -2,6 +2,9 @@ package Jin.Jin_College;
 
 import Jin.Jin_College.JPerson;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+
 class JTeacher extends JPerson {
     // Create the variables for a teacher.
     public static String id;
@@ -10,6 +13,13 @@ class JTeacher extends JPerson {
     public static String email;
     public static String[] coursesTaught = new String[4];
     public static int courseIdx;
+
+    public boolean readFile(File file) throws FileNotFoundException {
+        return false;
+    }
+    public boolean writeFile(File file) throws FileNotFoundException {
+        return false;
+    }
 
     /**
      * Constructs a new JTeacher object with the specified ID, first name, courses taught,

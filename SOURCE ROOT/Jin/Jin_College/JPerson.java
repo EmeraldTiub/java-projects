@@ -1,6 +1,9 @@
 package Jin.Jin_College;
 
-class JPerson {
+import java.io.File;
+import java.io.FileNotFoundException;
+
+abstract class JPerson implements Interface {
     // Create the info for the person.
     public static String id;
     public static String firstName;
@@ -145,7 +148,17 @@ class JPerson {
      * @param args command-line arguments passed to the program
      */
     public static void main(String[] args) {
-        JPerson person = new JPerson("203614261", "Yunjin", "Li", "jin.cminst@gmail.com");
+        JPerson person = new JPerson("203614261", "Yunjin", "Li", "jin.cminst@gmail.com") {
+            @Override
+            public boolean writeFile(File file) throws FileNotFoundException {
+                return false;
+            }
+
+            @Override
+            public boolean readFile(File file) throws FileNotFoundException {
+                return false;
+            }
+        };
         System.out.println(person);
     }
 

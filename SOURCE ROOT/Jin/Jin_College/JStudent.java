@@ -2,11 +2,21 @@ package Jin.Jin_College;
 
 import Jin.Jin_College.JPerson;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+
 class JStudent extends JPerson {
     // Create the course info.
     public static String[] courseNames = new String[30];
     public static double[] courseGrades = new double[30];
     public static int courseIdx;
+
+    public boolean readFile(File file) throws FileNotFoundException {
+        return false;
+    }
+    public boolean writeFile(File file) throws FileNotFoundException {
+        return false;
+    }
 
     /**
      * Constructs a JStudent object with the provided course information and personal details.
@@ -153,13 +163,17 @@ class JStudent extends JPerson {
     public static void main(String[] args) {
         String[] courseNames = {"PHYS& 121", "ITAL& 121", "CSC 143", "CHEM 256", "ENGL& 235"};
         double[] courseGrades = {100.0, 98.4, 99.6, 98.2, 97.8};
-        JStudent student = new JStudent(
-                courseNames,
-                courseGrades,
-                "203614261",
-                "yunjin.li@seattlecolleges.edu",
-                "Yunjin",
-                "Li");
+        JStudent student = new JStudent(courseNames,courseGrades,"203614261","yunjin.li@seattlecolleges.edu","Yunjin","Li") {
+            @Override
+            public boolean writeFile(File file) throws FileNotFoundException {
+                return false;
+            }
+
+            @Override
+            public boolean readFile(File file) throws FileNotFoundException {
+                return false;
+            }
+        };
         System.out.println(student);
         student.addCourse("NUTR& 101", 98.0);
         System.out.println("Added NUTR& 101 course with grade of 98.0%");
