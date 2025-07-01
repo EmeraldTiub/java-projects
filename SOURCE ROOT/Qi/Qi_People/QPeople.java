@@ -183,6 +183,22 @@ class QStudent extends QPeople {
     }
 
     /**
+     * Represent the Student object in a string
+     *
+     * @return A string showing the courses the student took and corresponding grades in .csv format
+     */
+    @Override
+    public String toString() {
+        String coursesAndGrades = "";
+        for (int i = 0; i < coursesTaken.size(); i++) {
+            coursesAndGrades += coursesTaken.get(i) + ", " + courseGrades.get(i) + "\n";
+        }
+        return "[Student]" +
+             "\nCourse, Grade \n" +
+                coursesAndGrades;
+    }
+
+    /**
      * The main() function to test the other methods
      *
      * @param   args   Command-line arguments. Not used here.
@@ -198,8 +214,6 @@ class QStudent extends QPeople {
         grades.add(100.00);
         grades.add(104.00);
         QStudent student = new QStudent(203082220, "yunqi", "yxli13@students.everettcc.edu", courses, grades);
-
-        // since QStudent extends to QPeople, and QPeople has a toString() method, this line runs that one
         System.out.println(student);
     }
 }
@@ -254,6 +268,28 @@ class QTeacher extends QPeople{
     }
 
     /**
+     * Represent the Teacher object in a string
+     *
+     * @return A string showing the courses the teacher taught in the format:
+     *         Courses Taught:
+     *         Course
+     *         Course
+     *         ...
+     *         Course
+     */
+    @Override
+    public String toString() {
+        String courses = "";
+
+        // Loop through the coursesTaught list and add each of them to a string
+        for (int i = 0; i < coursesTaught.size(); i++) {
+            courses += coursesTaught.get(i) + "\n";
+        }
+
+        return "Courses Taught:\n" + courses;
+    }
+
+    /**
      * The main() function to test the other methods
      *
      * @param   args   Command-line arguments. Not used here.
@@ -265,8 +301,6 @@ class QTeacher extends QPeople{
         courses.add("MATH& 123");
 
         QTeacher teacher = new QTeacher(123456, "sdf", "sdf@gmail.com", courses);
-
-        // since QTeacher extends to QPeople, and QPeople has a toString() method, this line runs that one
         System.out.println(teacher);
     }
 }
