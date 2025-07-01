@@ -1,0 +1,21 @@
+1. JPerson
+    - This class will be the superclass for all people in the college system.
+    - Define variables: `id`, `firstName`, `lastName`, and `email`.
+    - Create a constructor to initialize the person's information.
+    - Implement accessor (getter) and mutator (setter) methods for each attribute.
+    - Add a toString() method to provide a formatted string representation of a person's details.
+
+2. JStudent
+    - This class will extend the JPerson class to represent students.
+    - Add specific attributes for students: arrays to store and `courseGrades` (for up to 30 courses). `courseNames`
+    - Implement an ID validation method (`validID`) to make sure a student's ID is exactly 9 digits.
+    - Create a method addCourse to add a new course and its grade to the student's record.
+    - Develop a method () to calculate the student's average grade from all their courses. `gradeAvg`
+    - Override the `toString()` method to include student-specific details like their courses and average grade.
+
+3. JTeacher
+    - This class will also extend JPerson to represent teachers.
+    - Add an attribute for teachers: an array to store the `coursesTaught` (up to 4 courses per term).
+    - Implement an ID validation method (validID) to make sure a teacher's ID is 6 alphanumeric characters.
+    - Create a method addCourse to add a course to the teacher's teaching list.
+    - Override the toString() method to display the teacher's information and the list of courses they teach.
