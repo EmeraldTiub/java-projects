@@ -1,19 +1,9 @@
 package Jin.Jin_ArrayLists;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class JMain {
-    /**
-     * Compares two JPerson objects based on their age.
-     *
-     * @param person1 the first person to compare
-     * @param person2 the second person to compare
-     * @return a negative integer, zero, or a positive integer if the age of the first person
-     *         is less than, equal to, or greater than the age of the second person
-     */
-    public static int compare(JPerson person1, JPerson person2) {
-        return person1.getAge() - person2.getAge();
-    }
     public static void main(String[] args) {
         ArrayList<JPerson> people = new ArrayList<>();
 
@@ -27,8 +17,8 @@ public class JMain {
         people.add(new JPerson("Tom", "Cruise", 63));
         people.add(new JPerson("Chris", "Pratt", 46));
 
-        // Sort it with the compare() method
-        people.sort(JMain::compare);
+        // Sort it with the JPerson.compare() method
+        Collections.sort(people);
         for (JPerson person : people) {
             // Print out each person's info.
             System.out.println(person);

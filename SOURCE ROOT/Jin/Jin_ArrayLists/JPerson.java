@@ -1,6 +1,6 @@
 package Jin.Jin_ArrayLists;
 
-public class JPerson{
+public class JPerson implements Comparable<JPerson>{
     // Create the variables.
     private String firstName;
     private String lastName;
@@ -99,6 +99,26 @@ public class JPerson{
         return res;
     }
 
+    /**
+     * Compares two people based off of their age.
+     *
+     * @param other the object to be compared.
+     * @return a negative if this.age < other.age,
+     *         zero if this.age == other.age,
+     *         or a positive if this.age > other.age.
+     */
+    public int compareTo(JPerson other) {
+        return this.age - other.age;
+    }
+
+    /**
+     * Checks if the age is equal to another person's age.
+     * @param other the other person to compare.
+     * @return true if they're equal, false otherwise.
+     */
+    public boolean equals(JPerson other) {
+        return this.age == other.age;
+    }
 
 
 }
