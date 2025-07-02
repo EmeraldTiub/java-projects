@@ -4,6 +4,7 @@ import Jin.Jin_College.JPerson;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 class JTeacher extends JPerson {
     // Create the variables for a teacher.
@@ -14,11 +15,22 @@ class JTeacher extends JPerson {
     public static String[] coursesTaught = new String[4];
     public static int courseIdx;
 
+    /**
+     * Reads the content of a file and updates the courses taught by the teacher.
+     * Each line of the file represents to a course name and is stored in the coursesTaught.
+     *
+     * @param file the file to be read, containing the list of courses taught by the teacher
+     * @return true if the file is successfully read and the data is loaded into the array
+     * @throws FileNotFoundException if the specified file does not exist
+     */
     public boolean readFile(File file) throws FileNotFoundException {
-        return false;
-    }
-    public boolean writeFile(File file) throws FileNotFoundException {
-        return false;
+        super.readFile(file);
+        Scanner scanner = new Scanner(file);
+        for (int i = 0; i < coursesTaught.length; i++) {
+            coursesTaught[i] = scanner.nextLine();
+        }
+        scanner.close();
+        return true;
     }
 
     /**
