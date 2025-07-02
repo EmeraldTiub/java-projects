@@ -1,7 +1,5 @@
 package Jin.Jin_College;
 
-import Jin.Jin_College.JPerson;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 
