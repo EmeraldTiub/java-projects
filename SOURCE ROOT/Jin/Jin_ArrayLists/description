@@ -1,0 +1,22 @@
+ArrayLists
+
+- We've used ARRAYS in our projects; they have certain advantages like being fast
+  and compact, but we've seen certain drawbacks with them, like having to code many
+  algorithms ourselves (like sorting), and having a fixed size
+
+- The ArrayList is a collection object that gives us incredible flexibility
+  (no fixed size; add and delete items at will) and methods to handle many
+  common tasks
+- You can operate on an ArrayList as you can with many collections, e.g.,
+  iterating through their items, sorting them, etc.
+
+Sorting
+
+- Some of what collections offer is "free" IF we do our part
+
+- That can mean implementing some extra interfaces; luckily this is really easy
+
+- As we investigate how to make sorting super easy, we'll learn about such an
+  interface and the key method it requires
+
+- Once we do that tiny bit of work, the rest is super easy

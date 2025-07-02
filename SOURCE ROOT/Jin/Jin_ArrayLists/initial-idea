@@ -1,0 +1,19 @@
+1. Create a Person class with:
+    - Variables
+        - age
+        - firstName
+        - lastName
+    - Constructor with parameters:
+        - int age
+        - String firstName
+        - String lastName
+    - Methods
+        - int getAge()
+        - String getFirstName()
+        - String getLastName()
+        - String toString()
+2. Make a class called Main.
+3. Create a method inside Main called compare() to compare two Person objects.
+3. Inside the main function, create example Person objects.
+4. Sort the array of Person objects.
+5. Print out the info of each person in the newly sorted array.
