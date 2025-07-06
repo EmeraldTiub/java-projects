@@ -8,6 +8,9 @@ public class Bank {
     private double interestRate;
 
     public Bank(String bankName, double interestRate) {
+        if (interestRate < 0) {
+            throw new IllegalArgumentException("Interest rate must be a positive number.");
+        }
         this.bankName = bankName;
         this.interestRate = interestRate;
     }

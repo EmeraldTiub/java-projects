@@ -16,6 +16,9 @@ public class BankAccount {
      * @param balance the initial balance of the account
      */
     public BankAccount(String ownerName, String id, double balance) {
+        if (balance < 0) {
+            throw new IllegalArgumentException("Balance must be a non-negative decimal.");
+        }
         this.ownerName = ownerName;
         this.id = id;
         this.balance = balance;
