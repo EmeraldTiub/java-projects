@@ -111,7 +111,8 @@ public class BankAccount {
         if (amount < 0) {
             throw new IllegalArgumentException("Invalid deposit amount.");
         }
-        return balance += amount;
+        balance += amount;
+        return balance;
     }
 
     /**
@@ -125,7 +126,8 @@ public class BankAccount {
         if (amount > balance) {
             throw new IllegalArgumentException("Invalid withdrawal amount.");
         }
-        return balance -= amount;
+        balance -= amount;
+        return balance;
     }
 
     public String toString() {
