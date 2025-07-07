@@ -161,11 +161,16 @@ public class Bank {
     }
 
     /**
-     * Changes the interest rate for the bank.
+     * Changes the interest rate for the bank. The interest rate must
+     * be a non-negative value.
      *
      * @param newRate the new interest rate
+     * @throws IllegalArgumentException if the interest rate is negative
      */
     public void setInterestRate(double newRate) {
+        if (newRate < 0) {
+            throw new IllegalArgumentException("Interest rate must be a non-negative number.");
+        }
         interestRate = newRate;
     }
 

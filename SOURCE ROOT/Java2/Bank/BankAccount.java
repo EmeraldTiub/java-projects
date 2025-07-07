@@ -65,11 +65,15 @@ public class BankAccount {
     // Mutator methods
 
     /**
-     * Changes the balance of the bank account.
+     * Changes the balance of the bank account to the specified value.
      *
-     * @param newBalance the new balance of the account
+     * @param newBalance the new balance to set, which must be a non-negative double value
+     * @throws IllegalArgumentException if the specified new balance is negative
      */
-    public void setBalance(double newBalance) {
+    public void setBalance(double newBalance) throws IllegalArgumentException {
+        if (newBalance < 0) {
+            throw new IllegalArgumentException("Balance must be a non-negative decimal.");
+        }
         this.balance = newBalance;
     }
 
@@ -83,11 +87,16 @@ public class BankAccount {
     }
 
     /**
-     * Changes the status of the bank account.
+     * Updates the status of the bank account to the specified value.
+     * The status must be either "open" or "closed".
      *
-     * @param newStatus the new status to set for the account
+     * @param newStatus the new status for the account. Must be "open" or "closed"
+     * @throws IllegalArgumentException if the provided status is not "open" or "closed"
      */
-    public void setStatus(String newStatus) {
+    public void setStatus(String newStatus) throws IllegalArgumentException {
+        if (!newStatus.equals("open") && !newStatus.equals("closed")) {
+            throw new IllegalArgumentException("Status must be either \"open\" or \"closed\".");
+        }
         this.status = newStatus;
     }
 
@@ -97,7 +106,7 @@ public class BankAccount {
      * @param amount the amount of money to deposit
      * @throws IllegalArgumentException if the deposit amount is negative
      */
-    public void deposit(double amount) {
+    public void deposit(double amount) throws IllegalArgumentException {
         if (amount < 0) {
             throw new IllegalArgumentException("Invalid deposit amount.");
         }
@@ -110,7 +119,7 @@ public class BankAccount {
      * @param amount the amount of money to withdraw
      * @throws IllegalArgumentException if the withdrawal amount exceeds the current balance
      */
-    public void withdraw(double amount) {
+    public void withdraw(double amount) throws IllegalArgumentException {
         if (amount > balance) {
             throw new IllegalArgumentException("Invalid withdrawal amount.");
         } else {
