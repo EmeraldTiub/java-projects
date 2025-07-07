@@ -104,27 +104,30 @@ public class BankAccount {
      * Deposits a non-negative amount into the bank account.
      *
      * @param amount the amount of money to deposit
+     * @return the new balance.
      * @throws IllegalArgumentException if the deposit amount is negative
      */
-    public void deposit(double amount) throws IllegalArgumentException {
+    public double deposit(double amount) throws IllegalArgumentException {
         if (amount < 0) {
             throw new IllegalArgumentException("Invalid deposit amount.");
         }
         balance += amount;
+        return balance;
     }
 
     /**
      * Withdraws a specified amount from the account balance.
      *
      * @param amount the amount of money to withdraw
+     * @return the new balance.
      * @throws IllegalArgumentException if the withdrawal amount exceeds the current balance
      */
-    public void withdraw(double amount) throws IllegalArgumentException {
+    public double withdraw(double amount) throws IllegalArgumentException {
         if (amount > balance) {
             throw new IllegalArgumentException("Invalid withdrawal amount.");
-        } else {
-            balance -= amount;
         }
+        balance -= amount;
+        return balance;
     }
 
     public String toString() {
