@@ -130,31 +130,15 @@ public class BankAccount {
         return balance;
     }
 
+    /**
+     * Converts the account data into a string representation of
+     * the bank account, including the account ID, owner's name,
+     * balance, and status.
+     *
+     * @return a string of the bank account details
+     */
     public String toString() {
-        // Make the top of the table.
-        String res = "+—————————————+———————————————————————+\n";
-
-        // Format the owner name.
-        String spaces = "";
-        int spacesNeeded = 22 - ownerName.length();
-        for (int i = 0; i < spacesNeeded; i++) spaces += " ";
-        res += "| Owner Name  | " + ownerName + spaces + "|\n";
-
-        // Format the account ID.
-        spacesNeeded = 22 - id.length();
-        spaces = "";
-        for (int i = 0; i < spacesNeeded; i++) spaces += " ";
-        res += "| Account ID  | " + id + spaces + "|\n";
-
-        // Format the account balance.
-        spacesNeeded = 22 - Double.toString(balance).length();
-        spaces = "";
-        for (int i = 0; i < spacesNeeded - 1; i++) spaces += " ";
-        res += "| Balance     | $" + balance + spaces + "|\n";
-
-        // Close the table.
-        res += "+—————————————+———————————————————————+";
-        // Return the result.
-        return res;
+        String res = "Account ID: %s\nOwner Name: %s\nBalance: $%.2f\nStatus: %s";
+        return String.format(res, id, ownerName, balance, status);
     }
 }

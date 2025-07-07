@@ -174,7 +174,12 @@ public class Bank {
         interestRate = newRate;
     }
 
-
+    /**
+     * Creates a formatted table displaying all bank accounts associated
+     * with the bank, including the account ID, owner name, and balance.
+     *
+     * @return a string representing the formatted table of bank accounts
+     */
     public String displayAccounts() {
         String spaces;
         int spacesNeeded;
