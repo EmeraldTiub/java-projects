@@ -18,6 +18,9 @@ public class Bank {
         if (interestRate < 0) {
             throw new IllegalArgumentException("Interest rate must be a positive number.");
         }
+        if (bankName == null) {
+            throw new IllegalArgumentException("Bank name cannot be null.");
+        }
         this.bankName = bankName;
         this.interestRate = interestRate;
     }

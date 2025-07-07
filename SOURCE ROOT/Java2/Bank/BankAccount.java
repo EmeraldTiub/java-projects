@@ -19,6 +19,12 @@ public class BankAccount {
         if (balance < 0) {
             throw new IllegalArgumentException("Balance must be a non-negative decimal.");
         }
+        if (ownerName == null) {
+            throw new IllegalArgumentException("Owner name cannot be null.");
+        }
+        if (id == null) {
+            throw new IllegalArgumentException("Account ID cannot be null.");
+        }
         this.ownerName = ownerName;
         this.id = id;
         this.balance = balance;
