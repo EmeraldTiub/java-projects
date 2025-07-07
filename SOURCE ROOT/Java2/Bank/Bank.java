@@ -7,7 +7,14 @@ public class Bank {
     private String bankName;
     private double interestRate;
 
-    public Bank(String bankName, double interestRate) {
+    /**
+     * Constructor for a new Bank object with a specified name and interest rate.
+     *
+     * @param bankName the name of the bank
+     * @param interestRate the annual interest rate of the bank, which must be a non-negative value
+     * @throws IllegalArgumentException if the interest rate is negative
+     */
+    public Bank(String bankName, double interestRate) throws IllegalArgumentException {
         if (interestRate < 0) {
             throw new IllegalArgumentException("Interest rate must be a positive number.");
         }

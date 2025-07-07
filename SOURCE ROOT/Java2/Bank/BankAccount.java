@@ -8,14 +8,14 @@ public class BankAccount {
     private String status = "closed";
 
     /**
-     * Constructs a new BankAccount instance with the
-     * specified owner name, account id, and balance.
+     * Constructor for the BankAccount class with the owner name, account ID, and initial balance.
      *
      * @param ownerName the name of the account owner
-     * @param id the ID of the account
-     * @param balance the initial balance of the account
+     * @param id the ID for the bank account
+     * @param balance the initial balance of the account, which must be a non-negative value
+     * @throws IllegalArgumentException if the initial balance is negative
      */
-    public BankAccount(String ownerName, String id, double balance) {
+    public BankAccount(String ownerName, String id, double balance) throws IllegalArgumentException {
         if (balance < 0) {
             throw new IllegalArgumentException("Balance must be a non-negative decimal.");
         }
